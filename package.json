@@ -1,0 +1,17 @@
+{
+  "name": "tamarasproject",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:verify": "cypress verify",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --browser chrome",
+    "tests": "cypress run --browser chrome --reporter mochawesome"
+  },
+  "author": "Tamara",
+  "devDependencies": {
+    "@4tw/cypress-drag-drop": "^1.2.1",
+    "cypress": "^4.2.0",
+    "cypress-file-upload": "^3.5.3"
+  }
+}

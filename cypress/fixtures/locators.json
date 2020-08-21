@@ -1,0 +1,338 @@
+
+{
+    "GENERAL": {
+        "DROPZONE": "[taglimpse=dropZone]",
+        "SNACKBAR": "simple-snack-bar",
+        "LOGO": "gm-small-logo",
+        "CANCELCONTACTREQUEST" : "[taglimpse=closeGlimpseRequest]",
+        "UPLOAD1" : "[taglimpse=uploadContentButtonInput]"
+    
+    },
+
+    "HEADER": {
+        "USERMENU": "[taglimpse=openHeaderSidebarButton]",
+        "HAMMENU": "[taglimpse=openSidebarButton]",
+        "HAMSPONSORSHIPS": "[taglimpse=profileSidebarItemSponsorship]"
+    },
+
+    "SPONSET": {
+        "ADDLEVEL": "[taglimpse=addSponsorshipLevelButton]",
+        "TITLE": "[taglimpse=sponshorShipLevelTitle]",
+        "TOKENS": "[taglimpse=sponshorShipLevelTokens]",
+        "DESCRIPTION": "[taglimpse=sponshorShipLevelDescription]",
+        "FEATURES": "[taglimpse=addSponsorshipLevelButton]",
+        "SAVE": "[taglimpse=createSponsorshipLevelButton]",
+        "CANCEL": "[taglimpse=sendAlbumDialogCancelButton]",
+        "DELETE": "[taglimpse=removeSponsorshipLevelButton]",
+        "DELETEYES": "[taglimpse=confirmSponsorshipLevelDeleteButton]",
+        "UPDATE": "[taglimpse=updateSponsorshipLevelButton]",
+        "EDIT": "[taglimpse=editSponsorship]",
+        "FEATUREDROPDOWN": "[taglimpse=selectSponsorshipLevels]",
+        "FEATUREICON": "[taglimpse=feature]",
+        "LVLACTIVE": "[taglimpse=sponsorshipActive]",
+        "LVLNOTACTIVE": "[taglimpse=sponsorshipNotActive]",
+        "SOCMEDIAIDBTN": "[taglimpse=sponsorshipOpenSocialMediaIDButton]",
+        "SOCMEDIAIDINPUT": "[taglimpse=editSocialMediaIDTextInput]",
+        "SOCMEDIAIDSAVE": "[taglimpse=editSocialMediaIDSaveButton]",
+        "SOCMEDIAIDCANCEL": "[taglimpse=editSocialMediaIDCloseButton]",
+        "PISTMOREDETAILS": "[taglimpse=PISTViewMoreDetailsButton]"
+
+    },
+
+    "SIGNUP": {
+        "EMAILORPHONE": "input[name=emailOrPhone]",
+        "FULLNAME": "input[name=fullName]",
+        "USERNAME": "input[name=username]",
+        "PASSWORD": "input[name=password]",
+        "SUBMITBTN": "button[type=submit]"
+    },
+
+    "LOGIN": {
+        "EMAIL": "[taglimpse=email]",
+        "PASSWORD": "[taglimpse=password]",
+        "LOGINBTN": "[taglimpse=signIn]",
+        "ERRORDESC": "[taglimpse=loginErrorMessage]",
+        "PROFILE": "[taglimpse=openHeaderSidebarButton]",
+        "LOGOUT": "[taglimpse=profileSidebarItemLogout]"      
+    },
+
+   
+    "STORY": {
+        "PAGE": "[taglimpse=navigationStories]",
+        "TAB": "[taglimpse=storiesTabWrapper]",
+        "ADD": "[taglimpse=storyLineAddNewStory]",
+        "NEWSTORYNAME": "[taglimpse=storyNameInput]",
+        "ADDFILES" : "[taglimpse=uploadContentButtonInput]",
+        "CANCEL" : "[taglimpse=storyCancelButton]",
+        "POST": "[taglimpse=storyPostUpdateButton]",
+        "BOTTOMNOTIFICATION": "[taglimpse=storyBottomSheetHeader]",
+        "DELETESTORYBTN": "[taglimpse=storyItemDeleteStory]",
+        "EDITSTORYBTN": "[taglimpse=storyItemEditStory]",
+        "STORYCONTENT": ".story-wizard-list",
+        "PUBLICCOUNT": ".public-count",
+        "SPONSOREDCOUNT": ".sponsored-count",
+        "CONFIRMDELETESTORYBTN": "[taglimpse=dialogConfirmButton]",
+        "DIALOG": "[taglimpse=dialogBodyText]",
+        "DIALOGCANCEL": "[taglimpse=dialogCancelButton]",
+        "ITEM": ".story-wizard-list-item",
+        "ITEM1" : "[taglimpse=storyItem]",
+        "ITEMDELETE": "[taglimpse=storyItemDeleteButton]",
+        "PUBLICERROR": ".story-wizard-list-error",
+        "CLOSEBOTTOMSHEET": "[taglimpse=closeStoryBottomSheet]",
+        "NOSTORYTEXT": "[taglimpse=noStoriesText]",
+        "NEXTCONTENTBTN": "[taglimpse=storyContentNextItem]",
+        "STORYINFO" : "[taglimpse=ViewStoryInfoContainer]",
+        "CLOSESTORY" : "[taglimpse=ViewStoryClose]",
+        "AVATAR" : "[taglimpse=ViewStoryAvatar]",
+        "STORYUSERNAME" : ".story-userName",
+        "EXISTING" : "[taglimpse=existingStory]",
+
+        "STORYITEM": "[taglimpse=storyLineItem]",
+        "STORYPHOTO": "[taglimpse=storyPhoto]",
+        "STORYVIDEO": "[taglimpse=storyContentVideo]"
+    },
+
+    "STORE" : {
+        "PAGE": "[taglimpse=navigationMyStore]",
+        "MYVIDEOTAB": "[taglimpse=myStoreVideosTab]",
+        "MYPHOTOTAB": "[taglimpse=myStorePhotoGalleriesTab]",
+        "MYFILESTAB": "[taglimpse=myStoreFilesTab]",
+        "ADD": "[taglimpse=openUploadDialogButton]",
+        "CANCEL": "[taglimpse=closeUploadContentDialogButton]",
+        "CREATEALBUM": "[taglimpse=createNewAlbum]",
+        "ALBUMSELECT": "[taglimpse=albumName-FirstAlbum]",
+        "NAME": "[taglimpse=albumNameInput]",
+        "PRICE": "[taglimpse=albumPriceInput]",
+        "UPLOAD": "[taglimpse=uploadButton]",
+        "CONTENT": "[taglimpse=storeContent]",
+        "CONTENTNAME": "[taglimpse=storeContentName]",
+        "OPTIONS": "[taglimpse=albumContentOptionsButton]",
+        "EDITVID": "[taglimpse=albumContentOptions-EditVideo]",
+        "DELETEVID": "[taglimpse=albumContentOptions-DeleteVideo]",
+        "EDITSAVE": "[taglimpse=upsertAlbumDialogButton]",
+        "CANCELSAVE": "[taglimpse=cancelUpsertAlbumDialogButton]",
+        "SELECTALBUM": "[taglimpse=selectAlbum]",
+        "ALBUMNAME": "[class=ng-star-inserted]",
+        "UPLOADPIC": "[taglimpse=uploadContentButton]",
+        "ROTATEPIC": "[taglimpse=albumContentOptions-RotateCW]",
+        "DELETEPIC": "[taglimpse=albumContentOptions-DeleteImage]",
+        "EDITALBUM": "[taglimpse=editAlbum]",
+        "DELETEALBUM": "[taglimpse=deleteAlbum]",
+        "CONFIRMBTN": "[taglimpse=dialogConfirmButton]",
+        "CANCELBTN": "[taglimpse=dialogCancelButton]",
+        "EDITFILE": "[taglimpse=albumContentOptions-EditFile]",
+        "DELETEFILE": "[taglimpse=albumContentOptions-DeleteFile]",
+        "PROFILEBTN": "[taglimpse=recentContactsVisitUserButton]",
+        "VIDEOTAB": "[taglimpse=storeVideosTab]",
+        "PHOTOTAB": "[taglimpse=storePhotoGalleriesTab]",
+        "FILESTAB": "[taglimpse=storeFilesTab]",
+        "SHARINGTAB" : "[taglimpse=myStoreSharingTab]",
+        "SELECTFILE": "[taglimpse=storeContentFile-file2]",
+        "LINK": "[taglimpse=copyDirectLinkButton]",
+        "BUTTON": "[taglimpse=copyMyStoreButtonCode]",
+        "BADGE" : "[taglimpse=storeCartBadge]",
+        "ALBUMBADGE": "[taglimpse=storeContentBadge]",
+        "PROFILE" : "[taglimpse=navigationProfile]",
+        "SELECTTHUMBNAIL" : "[taglimpse=albumContentOptions-SelectThumbnailImage]",
+        "UPLOADTHUMBNAIL" : "[taglimpse=uploadCoverDialogButton]",
+        "CHANGEALBUMCOVER" : "[taglimpse=changeAlbumCover]",
+        "CONTENTIMAGE" : "[taglimpse=storeContentImage]",
+        "CONTENTFILE" : "[taglimpse=storeContentFileImage]",
+        "NOALBUMTEXT" : ".ng-star-inserted"   
+    },
+
+    "TOKENS" : {
+        "BUYTOKEN": "[taglimpse=buyTokensButton]",
+        "CARD": "[taglimpse=creditCards]",
+        "PURCHASE": "[taglimpse=purchaseButton]",
+        "TRANSACTION": "[taglimpse=transactionsLink]",
+        "PLAN": "[taglimpse=tokenPackage]",
+        "PLANSELECT": "[taglimpse=cardItem]",
+        "TEXT" : "[taglimpse=transactionsLink] span"
+    },
+
+    "SPONSORSHIP" : {
+        "CANCEL" : "[taglimpse=dialogCancelButton]",
+        "STARTSPON" : "[taglimpse=dialogConfirmButton]",
+        "POPUP" : ".cdk-overlay-pane",
+        "CANCELSPON" : "[taglimpse=cancelSponsorshipConfirmButton]",
+        "CONFIRMSPON" : "[taglimpse=confirmSponsorshipConfirmButton]",
+        "TYPEMSG" : "[taglimpse=pvtMessageInput]",
+        "SUBMITPVTMSG" : "[taglimpse=privateMessageSubmit]",
+        "EDITSOCMED" : "[taglimpse=socialMediaIDEditButton]",
+        "STORY" : "[taglimpse=ViewStorySponsorOrLoginButton]",
+        "SPONSOREDTAB" : "[taglimpse=SponsoredAlbumsTab]",
+        "SPONALBUM" : "[taglimpse=mediaAlbum]",
+        "SELECTPHOTO" : "[taglimpse=albumContentThumbnail]",
+        "SELECTPVTMSG" : "[taglimpse=PVTMSGSelectButton]",
+        "SELECTARCHIVEDSTORY" : "[taglimpse=ArchivedStorySelectButton]",
+        "SELECTBROADCAST" : "[taglimpse=BroadcastSelectButton]",
+        "SELECTSOCMED" : "[taglimpse=SocialMediaSelectButton]",
+        "SELECTPRIVATESTORY" : "[taglimpse=PrivateStorySelectButton]",
+        "SELECTALBUM" : "[taglimpse=SponsoredPhotosSelectButton]",
+        "SELECTVIDEO" : "[taglimpse=SponsoredVideosSelectButton]"
+    },
+
+    "DASHBOARD" : {
+        "PVTMSG" : "[taglimpse=navigationPvtMessages]",
+        "BROADCAST" : "[taglimpse=navigationViewBroadcast]",
+        "SOCIALMEDIA" : "[taglimpse=profileInformationViewSocialMediaIDButton]",
+        "PHOTOS" : "[taglimpse=navigationPvtPhotos]",
+        "VIDEOS" : "[taglimpse=navigationVideos]",
+        "CHATWALL" : "[taglimpse=navigationChatWall]"
+    },
+
+    "CHATWALL" : {
+        "MSG" : "[taglimpse=chatWallNewMessageInput]",
+        "POST" : "[taglimpse=chatWallSendMessage]",
+        "TEXTCONTENT" : "[taglimpse=chatWallPostContentText]",
+        "IMAGECONTENT" : "[taglimpse=chatWallPostContentImage]",
+        "VIDEOCONTENT" : "[taglimpse=chatWallPostContentVideo]",
+        "COMMENTCONTENT" : "[taglimpse=chatWallCommentText]",
+        "REPLYCONTENT" : "[taglimpse=chatWallReplayerReplyText]",
+        "PHOTO" : "[taglimpse=chatWallUploadPhoto]",
+        "UPLOAD" : "[taglimpse=uploadPostContentDialogButton]",
+        "DELETEPOST" : "[taglimpse=deletePostButton]",
+        "UPLOADTEXT" : "[taglimpse=postTextInput]",
+        "TYPECOMMENT" : "[taglimpse=commentInput]",
+        "CANCEL" : "[taglimpse=cancelCommentButton]",
+        "COMMENT" : "[taglimpse=leaveCommentButton",
+        "REPLY" : "[taglimpse=chatWallReplyButton]",
+        "EDIT" : "[taglimpse=editPostButton]",
+        "EDITREPLYOWNER" : "[taglimpse=chatWallOwnerEditReplyButton]",
+        "OWNERDELETE" : "[taglimpse=chatWallOwnerDeleteReplyButton]",
+        "EDITREPLY" : "[taglimpse=chatWallReplayerEditReplyButton]",
+        "DELETEREPLY" : "[taglimpse=chatWallReplayerDeleteReplyButton]"    
+    },
+
+    "PROFILEDETAILS" : {
+        "PROFILEDETAILS" : "[taglimpse=headerMenuItemProfileDetails]",
+        "TAGS" : ".mat-chip-input",
+        "DELETETAGS" : ".mat-chip-remove",
+        "UPDATE" : ".mat-raised-button",
+        "FIRSTNAME" : "[taglimpse=firstName]",
+        "LASTNAME" : "[taglimpse=lastName]",
+        "BIRTHDAY" : "[taglimpse=birthday]",
+        "DATE": ".mat-calendar-body-cell-content",
+        "GENDER" : "[taglimpse=gender]",
+        "PHONE" : "[taglimpse=phoneInput]",
+        "ABOUTME" : "[taglimpse=aboutMe]",
+        "LOCATION" : "[taglimpse=locationName]",
+        "DELETELOCATION" : ".material-icons",
+        "DATEDIALOG": ".mat-dialog-container",
+        "GENDERHINT" : "[taglimpse=genderHint]",
+        "PHONEHINT" : "[taglimpse=phoneEmailHint]",
+        "ABOUTMEMAX" : "#mat-hint-7",
+        "TAGSMAX" : "#mat-hint-9"       
+    },
+
+    "PHOTO" : {
+        "PAGE" : "[taglimpse=navigationPvtPhotos]",
+        "CREATENEWALBUM" : "[taglimpse=openUploadDialogButton]",
+        "CLOSEUPLOAD" : "[taglimpse=closeUploadContentDialogButton]",
+        "MEDIAALBUM" : "[taglimpse=mediaAlbum]",
+        "NAME" : "[taglimpse=albumNameInput]",
+        "UPLOAD" : "[taglimpse=uploadContentButton]",
+        "DELETEALBUM" : "[taglimpse=deleteAlbum]",
+        "CONFIRMBTN": "[taglimpse=dialogConfirmButton]",
+        "CANCELBTN": "[taglimpse=dialogCancelButton]",
+        "MEDIAPHOTO" : "[taglimpse=albumContentThumbnail]",
+        "ADD" : "[taglimpse=openUploadDialogButton]",
+        "OPTIONS" : "[taglimpse=albumContentOptionsButton]",
+        "ROTATEPHOTO": "[taglimpse=albumContentOptions-RotateCW]",
+        "DELETEPHOTO": "[taglimpse=albumContentOptions-DeleteImage]",
+        "RENAMEALBUM": "[taglimpse=renameAlbum]",
+        "CANCELRENAME": "[taglimpse=cancelRenameAlbumDialogButton]",
+        "CONFIRMRENAME": "[taglimpse=renameAlbumDialogButton]",
+        "ALBUMNAME": "[class=ng-star-inserted]",
+        "CHANGEALBUMCOVER" : "[taglimpse=changeAlbumCover]",
+        "UPLOADTHUMBNAIL" : "[taglimpse=uploadCoverDialogButton]",
+        "NOALBUMTEXT" : ".ng-star-inserted",
+        "BACKBUTTON" : "[taglimpse=backButton]",
+        "ALLPHOTOS": "[fxlayoutalign=start]",
+        "PUBLICALBUMS" : "[taglimpse=PublicAlbumsTab]",
+        "PRIVATEALBUMS" : "[taglimpse=PrivateAlbumsTab]",
+        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]"
+                   
+    },
+
+    "VIDEO" : {
+        "PAGE" : "[taglimpse=navigationVideos]",
+        "CREATENEWALBUM" : "[taglimpse=openUploadDialogButton]",
+        "CLOSEUPLOAD" : "[taglimpse=closeUploadContentDialogButton]",
+        "MEDIAALBUM" : "[taglimpse=mediaAlbum]",
+        "NAME" : "[taglimpse=albumNameInput]",
+        "UPLOAD" : "[taglimpse=uploadContentButton]",
+        "DELETEALBUM" : "[taglimpse=deleteAlbum]",
+        "CONFIRMBTN": "[taglimpse=dialogConfirmButton]",
+        "CANCELBTN": "[taglimpse=dialogCancelButton]",
+        "MEDIAPHOTO" : "[taglimpse=albumContentThumbnail]",
+        "ADD" : "[taglimpse=openUploadDialogButton]",
+        "OPTIONS" : "[taglimpse=albumContentOptionsButton]",
+        "DELETEVIDEO": "[taglimpse=albumContentOptions-DeleteVideo]",
+        "UPLOADVIDEOTHUMBNAIL": "[taglimpse=albumContentOptions-SelectThumbnailImage]",
+        "RENAMEALBUM": "[taglimpse=renameAlbum]",
+        "CANCELRENAME": "[taglimpse=cancelRenameAlbumDialogButton]",
+        "CONFIRMRENAME": "[taglimpse=renameAlbumDialogButton]",
+        "ALBUMNAME": "[class=ng-star-inserted]",
+        "CHANGEALBUMCOVER" : "[taglimpse=changeAlbumCover]",
+        "UPLOADTHUMBNAIL" : "[taglimpse=uploadCoverDialogButton]",
+        "NOALBUMTEXT" : ".ng-star-inserted",
+        "BACKBUTTON" : "[taglimpse=backButton]",
+        "ALLPHOTOS": "[fxlayoutalign=start]",
+        "PUBLICALBUMS" : "[taglimpse=PublicAlbumsTab]",
+        "PRIVATEALBUMS" : "[taglimpse=PrivateAlbumsTab]",
+        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]"
+       
+            
+    },
+
+    "SEARCH" : {
+        "SEARCH" : "[taglimpse=sidebarMenuItemSearch]",
+        "SEARCHINPUT" : "[taglimpse=searchUserInput]",
+        "SEARCHBTN" : "[taglimpse=searchButton]",
+        "NOUSERSFOUND" : ".user-search-grid-message",
+        "USERSFOUND" : ".grid-item-bottom",
+        "ONEUSERFOUND" : ".grid-item-image-wrapper",
+        "SHOWMOREBTN" : "[taglimpse=searchUsersShowMoreButton]",
+        "ALREDYCONNECTED" : ".grid-item-connected-badge"
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// {
+//     "LOGIN" : {
+//         "email" : "#email",
+//         "password" : "#password",
+//         "submitBtn" : ".btn-custom"
+//     },
+
+//     "CREATENEW" : {
+//         "createGallery" : ".nav-link nav-buttons",
+//         "title" : "#title",
+//         "description" : "#description",
+//         "url" : ".form-control",
+//         "submit" : ".form-control",
+//         "created" : ".cell",
+//         "alert" : ".alert-danger",
+//         "deleteImg" : ".fa-trash",
+//         "deleteGallery" : ".btn-custom",
+//         "titleEdit" : ".title-style"
+//     }
+// }

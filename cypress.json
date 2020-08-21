@@ -1,0 +1,10 @@
+{
+    "baseUrl" : "https://g-qa.glimpse.me/",
+    "integrationFolder": "cypress/tests",
+    "fixturesFolder": "cypress/fixtures",
+    "viewportWidth" : 1200,
+    "viewportHeight" : 800,
+    "defaultCommandTimeout" : 30000
+}
+
+
