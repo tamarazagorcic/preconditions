@@ -86,6 +86,15 @@ Cypress.Commands.add('uploadPhoto', (uploadPhotoName) => {
     })
 })
 
+Cypress.Commands.add('uploadPhotoToMsg', (uploadPhotoName) => {
+    const fileName = `media/photos/${uploadPhotoName}`
+    cy.fixture(fileName, 'base64').then(fileContent => {
+    cy.get(locators.GENERAL.DROPZONEMSG).upload({ fileContent, fileName, mimeType: 'image/jpeg', encoding: 'binary' },
+    // { subjectType: 'drag-n-drop' }
+    )
+    })
+})
+
 Cypress.Commands.add('newUploadPhoto', (uploadPhotoName) => {
     const fileName = `media/photos/${uploadPhotoName}`
     cy.fixture(fileName, 'base64').then(fileContent => {

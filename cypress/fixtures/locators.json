@@ -2,6 +2,8 @@
 {
     "GENERAL": {
         "DROPZONE": "[taglimpse=dropZone]",
+        "DROPZONEMSG": "[taglimpse=imageUploadDropZone]",
+        
         "SNACKBAR": "simple-snack-bar",
         "LOGO": "gm-small-logo",
         "CANCELCONTACTREQUEST" : "[taglimpse=closeGlimpseRequest]",
@@ -296,6 +298,48 @@
         "ONEUSERFOUND" : ".grid-item-image-wrapper",
         "SHOWMOREBTN" : "[taglimpse=searchUsersShowMoreButton]",
         "ALREDYCONNECTED" : ".grid-item-connected-badge"
+    },
+
+    "HAMBURGERMENU" : {
+        "CONTACTS" : "[taglimpse=sidebarMenuItemContacts]",
+        "FEED" : "[taglimpse=sidebarMenuItemActivityFeed]",
+        "DASHBOARD" : "[taglimpse=sidebarMenuItemDashboard]",
+        "FAVORITES" : "[taglimpse=sidebarMenuItemMyFavorites]",
+        "MEDIA" : "[taglimpse=sidebarMenuItemMyMedia]",
+        "MESSAGES" : "[taglimpse=sidebarMenuItemMessages]",
+        "SEARCH" : "[taglimpse=sidebarMenuItemSearch]",
+        "TRANSACTIONS" : "[taglimpse=sidebarMenuItemTransactions]"
+        
+      
+    },
+
+    "CONTACTS" : {
+        "TABS" : ".mat-button-wrapper",
+        "SERARCHINPUT" : "input[name='searchWord']",
+        "SERARCHRESULT" : "[taglimpse=userListUserName]",
+        "CONTACTSPROFILE" : ".profile-username"
+      
+    },
+
+    "MESSAGES" : {
+        "PAGE" : "[taglimpse=navigationPvtMessages]",
+        "BACKTOMYMESSAGES" : "[taglimpse=backToMyPvtMessagesButton]",
+        "INPUT" : "[taglimpse=pvtMessageInput]",
+        "IMGUPLOAD" : "[taglimpse=pvtMessageUploadImage]",
+        "SEND" : "[taglimpse=privateMessageSubmit]",
+        "TEXTCHECK" : "[taglimpse=currentUserMessageText]",
+        "NOTIFICATIONSICON" : "[taglimpse=navigationPvtMessagesNotification]",
+        "NOTIFICATIONSHAM" : "#mat-badge-content-0",
+        "NOTIFICATIONSLIST" : "[taglimpse=pvtMessageUnreadMessagesCount]",
+        "MSGLIST" : "[taglimpse=pvtMessageWrapper]",
+        "USERNAMEONLIST" : "[taglimpse=pvtMessageUserName]",
+        "LASTMESSAGE" : "[taglimpse=pvtMessageLastSentMessage]",
+        "UPLOAD" : "[taglimpse=imageUploadUploadButton]",
+        "PHOTOCHECK" : "[taglimpse=currentUserMessageImage]"
+        
+        
+        
+        
     }
 
 
