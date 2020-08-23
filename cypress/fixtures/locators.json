@@ -328,6 +328,9 @@
         "IMGUPLOAD" : "[taglimpse=pvtMessageUploadImage]",
         "SEND" : "[taglimpse=privateMessageSubmit]",
         "TEXTCHECK" : "[taglimpse=currentUserMessageText]",
+        "TIMECHECK" : "[taglimpse=currentUserMessageTimeCreated]",
+        "TEXTRECEIVER" : "[taglimpse=anotherUserMessageext]",
+        "TIMERECEIVER" : "[taglimpse=anotherUserMessageTimeCreated]",
         "NOTIFICATIONSICON" : "[taglimpse=navigationPvtMessagesNotification]",
         "NOTIFICATIONSHAM" : "#mat-badge-content-0",
         "NOTIFICATIONSLIST" : "[taglimpse=pvtMessageUnreadMessagesCount]",
@@ -335,9 +338,16 @@
         "USERNAMEONLIST" : "[taglimpse=pvtMessageUserName]",
         "LASTMESSAGE" : "[taglimpse=pvtMessageLastSentMessage]",
         "UPLOAD" : "[taglimpse=imageUploadUploadButton]",
-        "PHOTOCHECK" : "[taglimpse=currentUserMessageImage]"
-        
-        
+        "PHOTOCHECK" : "[taglimpse=currentUserMessageImage]",
+        "PHOTORECEIVER" : "[taglimpse=anotherUserMessageImage]",
+        "DATE" : "[taglimpse=pvtMessageDate]",
+        "SENDTOALL" : "[taglimpse=sendMessageToAllButton]",
+        "BUTTONONALL" : ".mat-button-wrapper",
+        "DIALODTOALL" : ".mat-dialog-container",
+        "CANCEL" : "[taglimpse=dialogCancelButton]",
+        "CONFIRM" : "[taglimpse=dialogConfirmButton]",
+        "TEXTFILD" : "textarea[name='messageContent']",
+        "ONLY24H" : "[taglimpse=dialogBodyText]"
         
         
     }
