@@ -1,5 +1,5 @@
 {
-    "password": "Test1234",
+    "password": "Glimpse18",
 
     "TamaraUser21": {
         "email": "tamaraz+user21@glimpse.me"
@@ -23,6 +23,18 @@
 
     "TamaraTest": {
         "email": "tamaraz+test@glimpse.me"
+    },
+
+    "Tamara23": {
+        "email": "tamaraz+723@glimpse.me"
+    },
+
+    "Nemanja": {
+        "email": "nemanja+46@glimpse.me"
+    },
+
+    "NemanjaProd": {
+        "email": "nemanja+21@glimpse.me"
     }
 
 

@@ -40,12 +40,33 @@ class ReqCondition {
             .wait(500)
             .get(locators.STORY.POST).click()
             .wait(1500)
+            
             if(cy.get(locators.STORY.DIALOG).should('be.visible')){
                 cy.get(locators.STORY.DIALOGCANCEL).click()
             }else{
                 cy.get(locators.STORY.BOTTOMNOTIFICATION)
                     .should('contain', 'Story has been successfully updated.')
             }
+    }
+
+    createPrivateStoryWithLevels(storyName) {
+        cy
+            .visit('/user/dashboard')
+            .get(locators.STORY.ADD).click()
+            .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
+            
+        cy.newUploadPhoto('testphoto4.jpg')
+        cy.newUploadPhoto('testphoto3.jpg')
+        cy.newUploadPhoto('testphoto2.jpg')
+
+        cy  .wait(1000)
+            .get(locators.STORY.ITEM).eq(0).click()
+            .wait(500)
+            .get(locators.STORY.POST).click()
+            .wait(1500)
+            cy.get(locators.STORY.BOTTOMNOTIFICATION)
+                .should('contain', 'Story has been successfully published.')
+            
     }
 
     createNewVideoStory(storyName) {
