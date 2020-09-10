@@ -129,6 +129,7 @@
         "PHOTOTAB": "[taglimpse=storePhotoGalleriesTab]",
         "FILESTAB": "[taglimpse=storeFilesTab]",
         "SHARINGTAB" : "[taglimpse=myStoreSharingTab]",
+        "DIRECTLINK" : "[taglimpse=directLink]",
         "SELECTFILE": "[taglimpse=storeContentFile-file2]",
         "LINK": "[taglimpse=copyDirectLinkButton]",
         "BUTTON": "[taglimpse=copyMyStoreButtonCode]",
@@ -313,6 +314,14 @@
       
     },
 
+    "PROFILEMENU" : {
+        "INVITELINK" : "[taglimpse=profileSidebarItemInvite]",
+        "CLOSEMENU" : "[taglimpse=profileSidenavCloseButton]"
+        
+        
+      
+    },
+
     "CONTACTS" : {
         "TABS" : ".mat-button-wrapper",
         "SERARCHINPUT" : "input[name='searchWord']",
@@ -350,43 +359,20 @@
         "ONLY24H" : "[taglimpse=dialogBodyText]"
         
         
+    },
+
+    "LINKS" : {
+        "INVITE" : "[taglimpse=copyDirectLinkButton]",
+        "INVITELINK" : ".link-field",
+        "CLOSE" : "[taglimpse=dialogCloseButton]"
+        
+        
+        
     }
+
+
 
 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// {
-//     "LOGIN" : {
-//         "email" : "#email",
-//         "password" : "#password",
-//         "submitBtn" : ".btn-custom"
-//     },
-
-//     "CREATENEW" : {
-//         "createGallery" : ".nav-link nav-buttons",
-//         "title" : "#title",
-//         "description" : "#description",
-//         "url" : ".form-control",
-//         "submit" : ".form-control",
-//         "created" : ".cell",
-//         "alert" : ".alert-danger",
-//         "deleteImg" : ".fa-trash",
-//         "deleteGallery" : ".btn-custom",
-//         "titleEdit" : ".title-style"
-//     }
-// }

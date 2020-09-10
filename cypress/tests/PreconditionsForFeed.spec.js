@@ -340,13 +340,14 @@ describe('This is a scipt for uploading media to one user', () =>{
             var name = reqConditions.makeid(15)
         reqConditions.newStoreVideo(name, 1)
         cy.wait(1000)
+        var name1 = reqConditions.makeid(15)
         cy.get(locators.STORE.MYVIDEOTAB).click()
             .get(locators.STORE.ADD).click()
         
         cy.newUploadVideo('testvideo.mp4')
         cy.uploadThumbnail('testphoto5.jpg')
             
-            .get(locators.STORE.NAME).click().type('Auto Vid')
+            .get(locators.STORE.NAME).click().type(name1)
             .get(locators.STORE.PRICE).click().type("1")
             .get(locators.STORE.UPLOAD).click()
             .wait(3000)
@@ -357,25 +358,26 @@ describe('This is a scipt for uploading media to one user', () =>{
 
 
 
-            var name1 = reqConditions.makeid(15)
             var name2 = reqConditions.makeid(15)
-        reqConditions.newStoreFile(name1, 1)
-        reqConditions.newStoreFile(name2, 1)
-        cy.wait(1000)
-           
-
-           
-
             var name3 = reqConditions.makeid(15)
-        reqConditions.newStorePhoto(name3, 1)
+        reqConditions.newStoreFile(name2, 1)
+        reqConditions.newStoreFile(name3, 1)
         cy.wait(1000)
+           
+
+           
+
+            var name4 = reqConditions.makeid(15)
+        reqConditions.newStorePhoto(name4, 1)
+        cy.wait(1000)
+        var name5 = reqConditions.makeid(15)
         cy.get(locators.STORE.MYPHOTOTAB).click()
             .get(locators.STORE.ADD).click()
         
         cy.newUploadPhoto('testphoto5.jpg')
         cy.uploadThumbnail('testphoto2.jpg')
             
-            .get(locators.STORE.NAME).click().type('Auto Photo 1')
+            .get(locators.STORE.NAME).click().type(name5)
             .get(locators.STORE.PRICE).click().type("1")
             .get(locators.STORE.UPLOADPIC).click()
             .wait(3000)
