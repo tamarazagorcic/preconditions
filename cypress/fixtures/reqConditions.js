@@ -66,6 +66,7 @@ class ReqCondition {
             .wait(1500)
             cy.get(locators.STORY.BOTTOMNOTIFICATION)
                 .should('contain', 'Story has been successfully published.')
+            .get(locators.STORY.CLOSEBOTTOMSHEET).click()
             
     }
 
@@ -113,6 +114,21 @@ class ReqCondition {
             .wait(1500)
     }
 
+    newStoreVideoWithThumbnail(videoName, videoPrice) {
+        cy
+            
+            .get(locators.STORE.MYVIDEOTAB).click()
+            .get(locators.STORE.ADD).click()
+
+        cy.newUploadVideo('testvideo.mp4')
+        cy.uploadThumbnail('testphoto5.jpg')
+        cy
+            .get(locators.STORE.NAME).click().type(videoName)
+            .get(locators.STORE.PRICE).click().type(videoPrice)
+            .get(locators.STORE.UPLOAD).click()
+            .wait(3000)
+    }
+
     newStoreFile(fileName, filePrice) {
         cy
             
@@ -144,6 +160,21 @@ class ReqCondition {
             .wait(1500)
     }
 
+    newStorePhotoWithThumbnail(photoName, photoPrice) {
+        cy
+            
+            .get(locators.STORE.MYPHOTOTAB).click()
+            .get(locators.STORE.ADD).click()
+
+        cy.newUploadPhoto('testphoto5.jpg')
+        cy.uploadThumbnail('testphoto4.jpg')
+        cy    
+            .get(locators.STORE.NAME).type(photoName)
+            .get(locators.STORE.PRICE).type(photoPrice)
+            .get(locators.STORE.UPLOADPIC).click()
+            .wait(1500)
+    }
+
     publicPhotoAlbum(albumname) {
         cy
             .get(locators.PHOTO.PAGE).click() 
@@ -164,6 +195,26 @@ class ReqCondition {
 
     }
 
+    publicPhotoAlbumWithThumbnail(albumname) {
+        cy
+            .get(locators.PHOTO.PAGE).click() 
+            .get(locators.PHOTO.PUBLICALBUMS).click()
+            .get(locators.PHOTO.CREATENEWALBUM).click()
+    
+        cy.newUploadPhoto('testphoto2.jpg')
+        cy.uploadThumbnail('testphoto3.jpg')
+     
+        cy    
+            .get(locators.PHOTO.NAME).type(albumname)
+            .get(locators.PHOTO.UPLOAD).click()
+            .wait(4000)
+            .get(locators.PHOTO.MEDIAALBUM)
+                .eq(0)
+                .scrollIntoView()
+                .should('be.visible')
+
+    }
+
     privatePhotoAlbum(albumname) {
         cy
             .get(locators.PHOTO.PAGE).click()    
@@ -172,6 +223,27 @@ class ReqCondition {
 
         cy.newUploadPhoto('testphoto1.jpg')
         cy.newUploadPhoto('testphoto2.jpg')
+
+        cy    
+            .get(locators.PHOTO.NAME).type(albumname)
+            .get(locators.PHOTO.UPLOAD).click()
+            .wait(4000)
+            .get(locators.PHOTO.PRIVATEALBUMS).click()
+            .get(locators.PHOTO.MEDIAALBUM)
+                .eq(0)
+                .scrollIntoView()
+                .should('be.visible')
+
+    }
+
+    privatePhotoAlbumWithThumbnail(albumname) {
+        cy
+            .get(locators.PHOTO.PAGE).click()    
+            .get(locators.PHOTO.PRIVATEALBUMS).click()
+            .get(locators.PHOTO.CREATENEWALBUM).click()
+
+        cy.newUploadPhoto('testphoto1.jpg')
+        cy.uploadThumbnail('testphoto3.jpg')
 
         cy    
             .get(locators.PHOTO.NAME).type(albumname)
@@ -206,6 +278,27 @@ class ReqCondition {
 
     }
 
+    sponsoredPhotoAlbumWithThumbnail(albumname) {
+        cy
+            .get(locators.PHOTO.PAGE).click()    
+            .get(locators.PHOTO.SPONSOREDALBUMS).click()
+            .get(locators.PHOTO.CREATENEWALBUM).click()
+
+        cy.newUploadPhoto('testphoto3.jpg')
+        cy.uploadThumbnail('testphoto6.jpg')
+
+        cy    
+            .get(locators.PHOTO.NAME).type(albumname)
+            .get(locators.PHOTO.UPLOAD).click()
+            .wait(4000)
+            .get(locators.PHOTO.SPONSOREDALBUMS).click()
+            .get(locators.PHOTO.MEDIAALBUM)
+                .eq(0)
+                .scrollIntoView()
+                .should('be.visible')
+
+    }
+
     publicVideoAlbum(albumname) {
         cy
             .get(locators.VIDEO.PAGE).click()
@@ -213,6 +306,25 @@ class ReqCondition {
             .get(locators.VIDEO.CREATENEWALBUM).click()
 
         cy.newUploadVideo('testvideo.mp4')
+        cy 
+            .get(locators.VIDEO.NAME).type(albumname)
+            .get(locators.VIDEO.UPLOAD).click()
+            .wait(4000)
+            .get(locators.VIDEO.MEDIAALBUM)
+                .eq(0)
+                .scrollIntoView()
+                .should('be.visible')
+
+    }
+
+    publicVideoAlbumWithThumbnail(albumname) {
+        cy
+            .get(locators.VIDEO.PAGE).click()
+            .get(locators.VIDEO.PUBLICALBUMS).click()
+            .get(locators.VIDEO.CREATENEWALBUM).click()
+
+        cy.newUploadVideo('testvideo.mp4')
+        cy.uploadThumbnail('testphoto6.jpg')
         cy 
             .get(locators.VIDEO.NAME).type(albumname)
             .get(locators.VIDEO.UPLOAD).click()
@@ -242,6 +354,25 @@ class ReqCondition {
 
     }
 
+    privateVideoAlbumWithThumbnail(albumname) {
+        cy
+            .get(locators.VIDEO.PAGE).click()
+            .get(locators.VIDEO.PRIVATEALBUMS).click()
+            .get(locators.VIDEO.CREATENEWALBUM).click()
+
+        cy.newUploadVideo('testvideo.mp4')
+        cy.uploadThumbnail('testphoto6.jpg')
+        cy    
+            .get(locators.VIDEO.NAME).type(albumname)
+            .get(locators.VIDEO.UPLOAD).click()
+            .wait(4000)
+            .get(locators.VIDEO.MEDIAALBUM)
+                .eq(0)
+                .scrollIntoView()
+                .should('be.visible')
+
+    }
+
     sponsoredVideoAlbum(albumname) {
         cy        
             .get(locators.VIDEO.PAGE).click()
@@ -249,6 +380,26 @@ class ReqCondition {
             .get(locators.VIDEO.CREATENEWALBUM).click()
 
         cy.newUploadVideo('testvideo.mp4')
+    
+        cy    
+            .get(locators.VIDEO.NAME).type(albumname)
+            .get(locators.VIDEO.UPLOAD).click()
+            .wait(4000)
+            .get(locators.VIDEO.MEDIAALBUM)
+                .eq(0)
+                .scrollIntoView()
+                .should('be.visible')
+
+    }
+
+    sponsoredVideoAlbumWithThumbnail(albumname) {
+        cy        
+            .get(locators.VIDEO.PAGE).click()
+            .get(locators.VIDEO.SPONSOREDALBUMS).click()
+            .get(locators.VIDEO.CREATENEWALBUM).click()
+
+        cy.newUploadVideo('testvideo.mp4')
+        cy.uploadThumbnail('testphoto6.jpg')
     
         cy    
             .get(locators.VIDEO.NAME).type(albumname)

@@ -14,7 +14,8 @@
     "HEADER": {
         "USERMENU": "[taglimpse=openHeaderSidebarButton]",
         "HAMMENU": "[taglimpse=openSidebarButton]",
-        "HAMSPONSORSHIPS": "[taglimpse=profileSidebarItemSponsorship]"
+        "HAMSPONSORSHIPS": "[taglimpse=profileSidebarItemSponsorship]",
+        "LOGO": ".logo-letters"
     },
 
     "SPONSET": {
@@ -316,7 +317,8 @@
 
     "PROFILEMENU" : {
         "INVITELINK" : "[taglimpse=profileSidebarItemInvite]",
-        "CLOSEMENU" : "[taglimpse=profileSidenavCloseButton]"
+        "CLOSEMENU" : "[taglimpse=profileSidenavCloseButton]",
+        "AFFILIATE" : "[taglimpse=profileSidebarItemReferral]"
         
         
       
@@ -363,9 +365,10 @@
 
     "LINKS" : {
         "INVITE" : "[taglimpse=copyDirectLinkButton]",
-        "INVITELINK" : ".link-field",
-        "CLOSE" : "[taglimpse=dialogCloseButton]"
-        
+        "LINKFIELD" : ".link-field",
+        "CLOSE" : "[taglimpse=dialogCloseButton]",
+        "ACTIVESTORYLINK" : "[taglimpse=storyItemCopyLink]",
+        "AFFILIATELINK" : "[taglimpse=referralLinkInput]"
         
         
     }

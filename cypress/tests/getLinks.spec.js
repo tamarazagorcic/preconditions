@@ -17,49 +17,83 @@ describe('This is a scipt for uploading media to one user', () =>{
 
 
    
-    it('Should be able to successfully create new private, public and sponsored Video album', () => {
+    it('Should be able to successfully get links out of user profile', () => {
         
-        // const inviteLink = '',
-        // const storeLink = ''
+        //Subaccount link and Invite
         cy
             .get(locators.HEADER.USERMENU).click()
             .get(locators.PROFILEMENU.INVITELINK).click()
-               
-        cy.get(locators.LINKS.INVITELINK).eq(1).then(($btn) => {
+        
+        cy.get(locators.LINKS.LINKFIELD).eq(0).then(($btn) => {
+
+            const subacc = $btn.text()
+            cy.writeFile('cypress/fixtures/links.json', { name: 'Subaccount', link: subacc}, { encoding: 'ascii', flag: 'a+' })
+                
+        })
+
+        cy.get(locators.LINKS.LINKFIELD).eq(1).then(($btn) => {
 
             const inviteLink = $btn.text()
             cy.writeFile('cypress/fixtures/links.json', { name: 'Invite link', link: inviteLink}, { encoding: 'ascii', flag: 'a+' })
             
         })
-        cy
-            .get(locators.LINKS.CLOSE).click()
-            .get(locators.PROFILEMENU.CLOSEMENU).click()
+        cy.get(locators.LINKS.CLOSE).click()
+
+        //Affiliate Link
+        cy.get(locators.PROFILEMENU.AFFILIATE).click()
+        cy.get(locators.LINKS.AFFILIATELINK).then(($btn) => {
+
+            const affiliateLink = $btn.text()
+            cy.writeFile('cypress/fixtures/links.json', { name: 'Affiliate Link', link: affiliateLink}, { encoding: 'ascii', flag: 'a+' })
+            
+        })
+
+        cy.get(locators.HEADER.HAMMENU).click()
+        cy.get(locators.HAMBURGERMENU.DASHBOARD).click()
+
+        //Store Link
         cy
             .get(locators.STORE.PAGE).click()
             .get(locators.STORE.SHARINGTAB).click()
-            .get(locators.STORE.LINK).click()
-        cy
-            
-            .get(locators.DASHBOARD.CHATWALL).click()
-            .get(locators.CHATWALL.MSG).type('{ctrl}v', {force: true})
-            .wait(1000)
-            .get(locators.CHATWALL.POST).click()
-          
-        //const storeLink = cy.type('{cmd}v')
-        //cy.writeFile('cypress/fixtures/links.json', { name: 'Store link', link: }, { encoding: 'ascii', flag: 'a+' })
-
-        // setTimeout(async () => {
-        //     const storeLink = await navigator.clipboard.readText();
-        //     console.log(text);
-        //     cy.writeFile('cypress/fixtures/links.json', { name: 'Store link', link: storeLink}, { encoding: 'ascii', flag: 'a+' })
-        //   }, 2000);
-          
-        cy.get(locators.CHATWALL.TEXTCONTENT).eq(0).then(($btn) => {
+            .wait(3000)
+                          
+        cy.get(locators.STORE.DIRECTLINK).then(($btn) => {
 
             const storeLink = $btn.text()
             cy.writeFile('cypress/fixtures/links.json', { name: 'Store link', link: storeLink}, { encoding: 'ascii', flag: 'a+' })
             
           })
+        //Stories Links
+          reqConditions.createPrivateStoryWithLevels('ATtestStory')
+
+        cy
+            .get(locators.STORY.PAGE).click()
+            .get(locators.STORY.TAB).contains('Active Stories').click()
+            .scrollIntoView()
+            .get(locators.LINKS.ACTIVESTORYLINK).eq(0).click()
+            .wait(2000)
+
+        cy.get(locators.LINKS.LINKFIELD).click().then(($btn) => {
+
+                const activestory = $btn.text()
+                cy.writeFile('cypress/fixtures/links.json', { name: 'Active Story Link', link: activestory}, { encoding: 'ascii', flag: 'a+' })
+                
+            })
+        cy.get(locators.LINKS.CLOSE).click()
+
+        cy
+            .wait(1000)
+            .get(locators.STORY.TAB).contains('Archived Stories').click()
+            .scrollIntoView()
+            .get(locators.LINKS.ACTIVESTORYLINK).eq(0).click()
+            .wait(2000)
+
+        cy.get(locators.LINKS.LINKFIELD).click().then(($btn) => {
+
+                const archivedstory = $btn.text()
+                cy.writeFile('cypress/fixtures/links.json', { name: 'Archived Story Link', link: archivedstory}, { encoding: 'ascii', flag: 'a+' })
+                
+            })
         
 
 

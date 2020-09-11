@@ -36,74 +36,27 @@ describe('This is a scipt for uploading media to one user', () =>{
         
         //private video
         var name = reqConditions.makeid(7)
-        cy
-            .get(locators.VIDEO.PAGE).click()
-            .get(locators.VIDEO.PRIVATEALBUMS).click()
-            .get(locators.VIDEO.CREATENEWALBUM).click()
-
-        cy.newUploadVideo('testvideo.mp4')
-        cy.newUploadVideo('testvideo2.mp4')
-
-        cy    
-            .get(locators.VIDEO.NAME).type(name)
-            .get(locators.VIDEO.UPLOAD).click()
-            .wait(8000)
-            .get(locators.VIDEO.MEDIAALBUM)
-                .eq(0)
-                .scrollIntoView()
-                .should('be.visible')
-       // public video
-        cy
         
-            .get(locators.VIDEO.PUBLICALBUMS).click()
-            
-           // for ( var i = 0; i < 4; i++ ){
-                for ( var a =0 ; a< arrayname.length; a++ ) {
-                    var realname = arrayname[a]
-
+        reqConditions.privateVideoAlbum(name)
+       // public video
                 
-                    cy.wait(2000)
-                    .get(locators.VIDEO.CREATENEWALBUM).click()
-    
-                    cy.newUploadVideo('testvideo.mp4')
-                    cy.newUploadVideo('testvideo2.mp4')
-                    cy .get(locators.VIDEO.NAME).type(realname)
-                        .wait(500)
-                        .get(locators.VIDEO.UPLOAD).click()
-                        .wait(8000)
-                        .get(locators.VIDEO.MEDIAALBUM)
-                            .eq(0)
-                            .scrollIntoView()
-                            .should('be.visible')
+           // for ( var i = 0; i < 4; i++ ){
+        for ( var a =0 ; a< arrayname.length; a++ ) {
+            var realname = arrayname[a]
+            reqConditions.publicVideoAlbum(realname)
 
-                }
+        }
                 
            // }
            
         //sponsored video
-        cy  .wait(4000)
-            .get(locators.VIDEO.SPONSOREDALBUMS).click()
+        cy  .wait(2000)
+            
+        for ( var i = 0; i < arraynamesponsored.length; i++ ){
+            var realnamesponsored = arraynamesponsored[i]
+            reqConditions.sponsoredVideoAlbum(realnamesponsored)
 
-            for ( var i = 0; i < arraynamesponsored.length; i++ ){
-                var realnamesponsored = arraynamesponsored[i]
-                    
-                cy.wait(2000)
-                    .get(locators.VIDEO.CREATENEWALBUM).click()
-        
-                cy.newUploadVideo('testvideo.mp4')
-                cy.newUploadVideo('testvideo2.mp4')
-                
-                var name3 = reqConditions.makeid(7)
-                
-                cy.get(locators.VIDEO.NAME).type(realnamesponsored)
-                    .get(locators.VIDEO.UPLOAD).click()
-                    .wait(8000)
-                    .get(locators.VIDEO.MEDIAALBUM)
-                        .eq(0)
-                        .scrollIntoView()
-                        .should('be.visible')
-
-                    }
+        }
                     
     })
 
@@ -123,71 +76,23 @@ describe('This is a scipt for uploading media to one user', () =>{
         var arraynamesponsored = [name5, name6, name7, name8];
         
         //private photo
-        cy
-            .get(locators.PHOTO.PAGE).click()    
-            .get(locators.PHOTO.PRIVATEALBUMS).click()
-            .get(locators.PHOTO.CREATENEWALBUM).click()
-
-        cy.newUploadPhoto('testphoto1.jpg')
-        cy.newUploadPhoto('testphoto2.jpg')
-
         var name = reqConditions.makeid(7)
-        cy    
-            .get(locators.PHOTO.NAME).type(name)
-            .get(locators.PHOTO.UPLOAD).click()
-            .wait(4000)
-            .get(locators.PHOTO.PRIVATEALBUMS).click()
-            .get(locators.PHOTO.MEDIAALBUM)
-                .eq(0)
-                .scrollIntoView()
-                .should('be.visible')
+        reqConditions.privatePhotoAlbum(name)
 
         //public photo
-        cy
-            .get(locators.PHOTO.PUBLICALBUMS).click()
-            for ( var i = 0; i < arrayname.length; i++ ){
-                 var realname = arrayname[i]
-
-                cy.wait(1000)
-                    .get(locators.PHOTO.CREATENEWALBUM).click()
-    
-                cy.newUploadPhoto('testphoto2.jpg')
-                cy.newUploadPhoto('testphoto5.jpg')
         
-                var name = reqConditions.makeid(7)
-                cy    
-                    .get(locators.PHOTO.NAME).type(realname)
-                    .get(locators.PHOTO.UPLOAD).click()
-                    .wait(4000)
-                    .get(locators.PHOTO.MEDIAALBUM)
-                        .eq(0)
-                        .scrollIntoView()
-                        .should('be.visible') 
-            }
+        for ( var i = 0; i < arrayname.length; i++ ){
+            var realname = arrayname[i]
+            reqConditions.publicPhotoAlbum(realname)
+        }
             
         //sponsored photo
-        cy  
-            .wait(1000)
-            .get(locators.PHOTO.SPONSOREDALBUMS).click()
-            for ( var i = 0; i < arraynamesponsored.length; i++ ){
-                var realnamesponsored = arraynamesponsored[i]
-                cy.wait(1000)
-                    .get(locators.PHOTO.CREATENEWALBUM).click()
-        
-                cy.newUploadPhoto('testphoto3.jpg')
-                cy.newUploadPhoto('testphoto6.jpg')
-        
-                var name = reqConditions.makeid(7)
-                cy 
-                    .get(locators.PHOTO.NAME).type(realnamesponsored)
-                    .get(locators.PHOTO.UPLOAD).click()
-                    .wait(4000)
-                    .get(locators.PHOTO.SPONSOREDALBUMS).click()
-                    .get(locators.PHOTO.MEDIAALBUM)
-                        .eq(0)
-                        .scrollIntoView()
-                        .should('be.visible')
-            }        
+        cy.wait(1000)
+            
+        for ( var i = 0; i < arraynamesponsored.length; i++ ){
+            var realnamesponsored = arraynamesponsored[i]
+            reqConditions.sponsoredPhotoAlbum(realnamesponsored)
+        }        
 
      })
 

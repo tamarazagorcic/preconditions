@@ -83,6 +83,8 @@ describe('This is a scipt for uploading media to one user', () =>{
         var name1 = reqConditions.makeid(15)
         var name = reqConditions.makeid(15)
         var name2 = reqConditions.makeid(15)
+        var name3 = reqConditions.makeid(7)
+        var name4 = reqConditions.makeid(7)
 
         cy  
             .get(locators.STORE.PAGE).click()
@@ -90,6 +92,8 @@ describe('This is a scipt for uploading media to one user', () =>{
             reqConditions.newStoreVideo(name, 1)
             reqConditions.newStoreFile(name1, 1)
             reqConditions.newStorePhoto(name2, 1)
+            reqConditions.newStoreVideoWithThumbnail(name3, 1)
+            reqConditions.newStorePhotoWithThumbnail(name4, 1)  
             
     })
 
