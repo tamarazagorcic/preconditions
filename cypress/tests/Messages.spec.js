@@ -143,37 +143,47 @@ describe('This is a scipt for uploading media to one user', () =>{
                     
     })
 
-    // it('Send to all message', () => {
+    it('Send to all message', () => {
         
-    //     cy.login(receiver)
-    //          .wait(2000)
+        cy.login(sender1)
+             .wait(2000)
 
-    //          var shorttext = reqConditions.makeid(49)
-    //          var oktext = reqConditions.makeid(50)
+             var shorttext = reqConditions.makeid(49)
+             var oktext = reqConditions.makeid(50)
+             var oktext1 = reqConditions.makeid(50)
         
-    //     cy
-    //         .get(locators.MESSAGES.PAGE).click()
-    //         // .get(locators.MESSAGES.SENDTOALL).click()
-    //         // .get(locators.MESSAGES.TEXTFILD).type(shorttext)
-    //         // .get(locators.MESSAGES.BUTTONONALL).contains('Send').should('be.disabled')
-    //         // .get(locators.MESSAGES.TEXTFILD).type('a')
-    //         // .get(locators.MESSAGES.BUTTONONALL).contains('Send').should('be.enabled').click()
-    //         // .get(locators.MESSAGES.CANCEL).click()
-    //         // .wait(500)
-    //         // .get(locators.MESSAGES.BUTTONONALL).contains('Send').should('be.enabled').click()
-    //         // .get(locators.MESSAGES.CONFIRM).click()
-    //         // .wait(1000)
+        cy
+            .get(locators.MESSAGES.PAGE).click()
+            .get(locators.MESSAGES.SENDTOALL).click()
+            .get(locators.MESSAGES.TEXTFILD).type(shorttext)
+            .get(locators.MESSAGES.SENDTOALLSEND).should('be.disabled')
+            .get(locators.MESSAGES.TEXTFILD).type('a')
+            .get(locators.MESSAGES.SENDTOALLSEND).should('be.enabled').click()
+            .get(locators.MESSAGES.CANCEL).click()
+            .wait(500)
+            .get(locators.MESSAGES.SENDTOALLCANCEL).click()
+            .wait(500)
+            .get(locators.MESSAGES.SENDTOALL).click()
+            .get(locators.MESSAGES.TEXTFILD).type(oktext)
+            .get(locators.MESSAGES.SENDTOALLSEND).should('be.enabled').click()
+            .get(locators.MESSAGES.CONFIRM).click()
+            .wait(5000)
+            .get(locators.MESSAGES.LASTMESSAGE).eq(0).should('include.text' , oktext)
 
-    //     cy
-    //         .get(locators.MESSAGES.SENDTOALL).click()
-    //         .get(locators.MESSAGES.TEXTFILD).type(oktext)
-    //         //.contains('Send').children('span').should('have.class', 'mat-button-wrapper').click()
-    //         .get(locators.MESSAGES.DIALODTOALL).click('bottomRight')
-    //         .get(locators.MESSAGES.CONFIRM).click()
-    //         .get(locators.MESSAGES.ONLY24H).should('be.visible')
+
+        cy
+            .get(locators.MESSAGES.SENDTOALL).click()
+            .get(locators.MESSAGES.TEXTFILD).type(oktext1)
+            .get(locators.MESSAGES.SENDTOALLSEND).click()
+            .get(locators.MESSAGES.CONFIRM).click()
+            .get(locators.MESSAGES.ONLY24H).should('be.visible')
+            .get(locators.MESSAGES.CANCEL).click()
+            .get(locators.MESSAGES.SENDTOALLCANCEL).click()
+            .get(locators.MESSAGES.LASTMESSAGE).eq(0).should('include.text' , oktext)
+
             
                     
-    // })
+    })
 
  
 

@@ -481,6 +481,54 @@ class ReqCondition {
 
     }
 
+    sendFriendRequest(to , text, tokens) {
+        cy
+            .get(locators.HEADER.HAMMENU).click()
+            .get(locators.HAMBURGERMENU.SEARCH).click()
+            .get(locators.SEARCH.SEARCHINPUT).type(to)
+            .get(locators.SEARCH.SEARCHBTN).click()
+            .get(locators.SEARCH.ONEUSERFOUND).should('have.attr','href' ,'/'+to ).click()
+            .get(locators.FRIENDREQUEST.REQUEST).should('be.visible').click()
+            .get(locators.FRIENDREQUEST.REQUESTMESSAGE).type(text)
+            .get(locators.FRIENDREQUEST.TOKENSTOSEND).type(tokens)
+            .get(locators.FRIENDREQUEST.SENDREQUEST).click()
+            .wait(500)
+        cy.get(locators.GENERAL.SNACKBAR)
+            .should('contain', 'Request was sent')
+
+    }
+
+    sendFriendRequestWithout(to) {
+        cy
+            .get(locators.HEADER.HAMMENU).click()
+            .get(locators.HAMBURGERMENU.SEARCH).click()
+            .get(locators.SEARCH.SEARCHINPUT).type(to)
+            .get(locators.SEARCH.SEARCHBTN).click()
+            .get(locators.SEARCH.ONEUSERFOUND).should('have.attr','href' ,'/'+to ).click()
+            .get(locators.FRIENDREQUEST.REQUEST).should('be.visible').click()
+            .get(locators.FRIENDREQUEST.SENDREQUEST).click()
+            .wait(500)
+        cy.get(locators.GENERAL.SNACKBAR)
+            .should('contain', 'Request was sent')
+
+    }
+
+    blockUser(who) {
+        cy
+            .get(locators.CONTACTS.SERARCHINPUT).clear().type(who)
+            .get(locators.CONTACTS.SERARCHRESULT).first().should('contain.text', who)
+            .get(locators.CONTACTS.BLOCKUSER).first().click()
+
+    }
+
+    unblockUser(who) {
+        cy
+            .get(locators.CONTACTS.SERARCHINPUT).clear().type(who)
+            .get(locators.CONTACTS.TABS).contains(' Unblock ').click()
+        cy.get(locators.GENERAL.SNACKBAR)
+            .should('contain', 'User '+who+' has been unblocked successfully.')
+    }
+
 
 }
 

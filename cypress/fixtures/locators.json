@@ -183,7 +183,8 @@
         "SOCIALMEDIA" : "[taglimpse=profileInformationViewSocialMediaIDButton]",
         "PHOTOS" : "[taglimpse=navigationPvtPhotos]",
         "VIDEOS" : "[taglimpse=navigationVideos]",
-        "CHATWALL" : "[taglimpse=navigationChatWall]"
+        "CHATWALL" : "[taglimpse=navigationChatWall]",
+        "CONNECT" : "[taglimpse=navigationConnect]"
     },
 
     "CHATWALL" : {
@@ -328,7 +329,17 @@
         "TABS" : ".mat-button-wrapper",
         "SERARCHINPUT" : "input[name='searchWord']",
         "SERARCHRESULT" : "[taglimpse=userListUserName]",
-        "CONTACTSPROFILE" : ".profile-username"
+        "BLOCKUSER" : "[taglimpse=blockButton]",
+        "BLOCKEDSEARCHRESULT" : ".ng-star-inserted",
+        "UNBLOCK" : "[taglimpse=blockButton]",
+        "CONTACTSPROFILE" : ".profile-username",
+        "OUTGOINGCANCEL" : "[taglimpse=cancelButton]",
+        "INCOMINGDECLINE" : "[taglimpse=declineRequestButton]",
+        "INCOMINGACCEPT" : "[taglimpse=acceptRequestButton]",
+        "INCOMINGNOTIFICATION" : ".mat-badge-content",
+        "INCOMINGMESSAGE" : "[taglimpse=userListSentMessage]",
+        "TOKENSRECEIVED" : "[taglimpse=tokenAmount]"
+
       
     },
 
@@ -353,8 +364,8 @@
         "PHOTORECEIVER" : "[taglimpse=anotherUserMessageImage]",
         "DATE" : "[taglimpse=pvtMessageDate]",
         "SENDTOALL" : "[taglimpse=sendMessageToAllButton]",
-        "BUTTONONALL" : ".mat-button-wrapper",
-        "DIALODTOALL" : ".mat-dialog-container",
+        "SENDTOALLSEND" : "[taglimpse=sendToAllSendButton]",
+        "SENDTOALLCANCEL" : "[taglimpse=sendToAllCancelButton]",
         "CANCEL" : "[taglimpse=dialogCancelButton]",
         "CONFIRM" : "[taglimpse=dialogConfirmButton]",
         "TEXTFILD" : "textarea[name='messageContent']",
@@ -369,6 +380,39 @@
         "CLOSE" : "[taglimpse=dialogCloseButton]",
         "ACTIVESTORYLINK" : "[taglimpse=storyItemCopyLink]",
         "AFFILIATELINK" : "[taglimpse=referralLinkInput]"
+        
+        
+    },
+
+    "BROADCAST" : {
+        "PAGE" : "[taglimpse=navigationBroadcast]",
+        "START" : "[taglimpse=startBroadcastingButton]",
+        "END" : "[taglimpse=endBroacastButton]",
+        "DISABLEVIDEO" : "[taglimpse=disableBroadcastVideoButton]",
+        "DISABLEAUDIO" : "[taglimpse=disableBroadcastAudioButton]",
+        "SETTINGS" : "[taglimpse=broadcastSettings]",
+        "FULLSCR" : "[taglimpse=broadcastToggleFullscreenButton]",
+        "LINK" : "[taglimpse=shareBroadcastButton]",
+        "RECORD" : ".record-icon",
+        "NOTRECORD" : ".do-not-record-icon",
+        "ANNOUNCE" : "[taglimpse=announceBroadcastButton]"
+        
+        
+    },
+
+    "FRIENDREQUEST" : {
+        "REQUEST" : "[taglimpse=glimpseRequest]",
+        "CLOSEREQUESTPOPUP" : "[taglimpse=closeGlimpseRequest]",
+        "REQUESTMESSAGE" : "[taglimpse=sendRequestMessage]",
+        "TOKENSTOSEND" : "[taglimpse=tokenAmount]",
+        "CANCELSENDING" : "[taglimpse=sendRequestCancel]",
+        "SENDREQUEST" : "[taglimpse=sendRequest]",
+        "PROFILEUSERNAME" : ".profile-username",
+        "BLOCKREQUEST" : "[taglimpse=blockGlimpseRequest]",
+        "DECLINEREQUEST" : "[taglimpse=declineGlimpseRequest]",
+        "ACCEPTREQUEST" : "[taglimpse=acceptGlimpseRequest]"
+        
+       
         
         
     }
