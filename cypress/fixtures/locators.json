@@ -409,8 +409,12 @@
         "SENDREQUEST" : "[taglimpse=sendRequest]",
         "PROFILEUSERNAME" : ".profile-username",
         "BLOCKREQUEST" : "[taglimpse=blockGlimpseRequest]",
+        "UNBLOCKREQUEST" : "[taglimpse=unblockGlimpseRequest]",
         "DECLINEREQUEST" : "[taglimpse=declineGlimpseRequest]",
-        "ACCEPTREQUEST" : "[taglimpse=acceptGlimpseRequest]"
+        "ACCEPTREQUEST" : "[taglimpse=acceptGlimpseRequest]",
+        "POPUPUSERNAME" : ".pre-profile-page-username",
+        "POPUPTEXT" : ".pre-profile-page-note",
+        "ACCEPTMESSAGE" : "[taglimpse=AcceptRequestMessage]"
         
        
         

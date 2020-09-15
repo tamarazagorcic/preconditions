@@ -516,7 +516,9 @@ class ReqCondition {
     blockUser(who) {
         cy
             .get(locators.CONTACTS.SERARCHINPUT).clear().type(who)
+            .wait(500)
             .get(locators.CONTACTS.SERARCHRESULT).first().should('contain.text', who)
+            .wait(500)
             .get(locators.CONTACTS.BLOCKUSER).first().click()
 
     }
@@ -524,9 +526,30 @@ class ReqCondition {
     unblockUser(who) {
         cy
             .get(locators.CONTACTS.SERARCHINPUT).clear().type(who)
+            .wait(500)
             .get(locators.CONTACTS.TABS).contains(' Unblock ').click()
+            .wait(500)
         cy.get(locators.GENERAL.SNACKBAR)
             .should('contain', 'User '+who+' has been unblocked successfully.')
+    }
+
+    sendMessage(receiver, text) {
+        cy
+            .get(locators.HEADER.HAMMENU).click()
+            .get(locators.HAMBURGERMENU.CONTACTS).click()
+            .get(locators.CONTACTS.TABS).contains('Users').click()
+            .get(locators.CONTACTS.SERARCHINPUT).type(receiver)
+            .get(locators.CONTACTS.SERARCHRESULT).click()
+            .get(locators.CONTACTS.CONTACTSPROFILE).should('contain.text', receiver)
+
+        cy
+            .get(locators.MESSAGES.PAGE).click()
+            .get(locators.MESSAGES.BACKTOMYMESSAGES).should('be.visible')
+            .get(locators.MESSAGES.INPUT).type(text)
+            .get(locators.MESSAGES.SEND).click()
+            .get(locators.MESSAGES.TEXTCHECK).should('contain.text', text)
+            .get(locators.MESSAGES.TIMECHECK).last().should('be.visible')
+            .get(locators.MESSAGES.DATE).last().should('contain.text', 'Today')
     }
 
 
