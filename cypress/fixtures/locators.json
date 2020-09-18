@@ -8,7 +8,6 @@
         "LOGO": "gm-small-logo",
         "CANCELCONTACTREQUEST" : "[taglimpse=closeGlimpseRequest]",
         "UPLOAD1" : "[taglimpse=uploadContentButtonInput]"
-    
     },
 
     "HEADER": {
@@ -39,7 +38,6 @@
         "SOCMEDIAIDSAVE": "[taglimpse=editSocialMediaIDSaveButton]",
         "SOCMEDIAIDCANCEL": "[taglimpse=editSocialMediaIDCloseButton]",
         "PISTMOREDETAILS": "[taglimpse=PISTViewMoreDetailsButton]"
-
     },
 
     "SIGNUP": {
@@ -184,7 +182,9 @@
         "PHOTOS" : "[taglimpse=navigationPvtPhotos]",
         "VIDEOS" : "[taglimpse=navigationVideos]",
         "CHATWALL" : "[taglimpse=navigationChatWall]",
-        "CONNECT" : "[taglimpse=navigationConnect]"
+        "CONNECT" : "[taglimpse=navigationConnect]",
+        "FEED" : "[taglimpse=navigationActivityFeed]",
+        "DASHBOARD" : "[taglimpse=navigationProfile]"
     },
 
     "CHATWALL" : {
@@ -257,8 +257,7 @@
         "ALLPHOTOS": "[fxlayoutalign=start]",
         "PUBLICALBUMS" : "[taglimpse=PublicAlbumsTab]",
         "PRIVATEALBUMS" : "[taglimpse=PrivateAlbumsTab]",
-        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]"
-                   
+        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]"               
     },
 
     "VIDEO" : {
@@ -287,9 +286,7 @@
         "ALLPHOTOS": "[fxlayoutalign=start]",
         "PUBLICALBUMS" : "[taglimpse=PublicAlbumsTab]",
         "PRIVATEALBUMS" : "[taglimpse=PrivateAlbumsTab]",
-        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]"
-       
-            
+        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]"        
     },
 
     "SEARCH" : {
@@ -311,18 +308,13 @@
         "MEDIA" : "[taglimpse=sidebarMenuItemMyMedia]",
         "MESSAGES" : "[taglimpse=sidebarMenuItemMessages]",
         "SEARCH" : "[taglimpse=sidebarMenuItemSearch]",
-        "TRANSACTIONS" : "[taglimpse=sidebarMenuItemTransactions]"
-        
-      
+        "TRANSACTIONS" : "[taglimpse=sidebarMenuItemTransactions]"  
     },
 
     "PROFILEMENU" : {
         "INVITELINK" : "[taglimpse=profileSidebarItemInvite]",
         "CLOSEMENU" : "[taglimpse=profileSidenavCloseButton]",
-        "AFFILIATE" : "[taglimpse=profileSidebarItemReferral]"
-        
-        
-      
+        "AFFILIATE" : "[taglimpse=profileSidebarItemReferral]"  
     },
 
     "CONTACTS" : {
@@ -339,8 +331,6 @@
         "INCOMINGNOTIFICATION" : ".mat-badge-content",
         "INCOMINGMESSAGE" : "[taglimpse=userListSentMessage]",
         "TOKENSRECEIVED" : "[taglimpse=tokenAmount]"
-
-      
     },
 
     "MESSAGES" : {
@@ -369,9 +359,7 @@
         "CANCEL" : "[taglimpse=dialogCancelButton]",
         "CONFIRM" : "[taglimpse=dialogConfirmButton]",
         "TEXTFILD" : "textarea[name='messageContent']",
-        "ONLY24H" : "[taglimpse=dialogBodyText]"
-        
-        
+        "ONLY24H" : "[taglimpse=dialogBodyText]"    
     },
 
     "LINKS" : {
@@ -379,9 +367,7 @@
         "LINKFIELD" : ".link-field",
         "CLOSE" : "[taglimpse=dialogCloseButton]",
         "ACTIVESTORYLINK" : "[taglimpse=storyItemCopyLink]",
-        "AFFILIATELINK" : "[taglimpse=referralLinkInput]"
-        
-        
+        "AFFILIATELINK" : "[taglimpse=referralLinkInput]"    
     },
 
     "BROADCAST" : {
@@ -395,9 +381,7 @@
         "LINK" : "[taglimpse=shareBroadcastButton]",
         "RECORD" : ".record-icon",
         "NOTRECORD" : ".do-not-record-icon",
-        "ANNOUNCE" : "[taglimpse=announceBroadcastButton]"
-        
-        
+        "ANNOUNCE" : "[taglimpse=announceBroadcastButton]"     
     },
 
     "FRIENDREQUEST" : {
@@ -414,10 +398,16 @@
         "ACCEPTREQUEST" : "[taglimpse=acceptGlimpseRequest]",
         "POPUPUSERNAME" : ".pre-profile-page-username",
         "POPUPTEXT" : ".pre-profile-page-note",
-        "ACCEPTMESSAGE" : "[taglimpse=AcceptRequestMessage]"
-        
-       
-        
+        "ACCEPTMESSAGE" : "[taglimpse=AcceptRequestMessage]"    
+    },
+
+    "DASHBOARDINFO" : {
+        "TEXTONCARD" : ".theme-blue-lighter-color",
+        "VALUEONCARD" : ".basic-info-link",
+        "NUMBERCONTACTS" : ".page-count",
+        "TOKENSPAGE" : "[taglimpse=tokenWorthText]",
+        "PURCHASED" : "[taglimpse=tokenWorthText]",
+        "RECEIVED" : "[taglimpse=tokenWorthText]"
         
     }
 

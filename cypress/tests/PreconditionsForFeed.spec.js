@@ -54,7 +54,7 @@ describe('This is a scipt for uploading media to one user', () =>{
         //private photo
 
         reqConditions.privatePhotoAlbum(name)
-        reqConditions.privatePhotoAlbumwithThumbnail(name1)
+        reqConditions.privatePhotoAlbumWithThumbnail(name1)
                            
         //public photo
 
@@ -82,7 +82,7 @@ describe('This is a scipt for uploading media to one user', () =>{
         reqConditions.photoWallPost('testphoto3.jpg')
         cy.wait(2000)
         reqConditions.videoWallPost('testvideo2.mp4')
-        cy.wait(1000)      
+        cy.wait(3000)      
         reqConditions.photoTextWallPost(name1, 'testphoto5.jpg')
         cy.wait(2000)
         reqConditions.videoTextWallPost(name2, 'testvideo.mp4')
