@@ -37,7 +37,13 @@
         "SOCMEDIAIDINPUT": "[taglimpse=editSocialMediaIDTextInput]",
         "SOCMEDIAIDSAVE": "[taglimpse=editSocialMediaIDSaveButton]",
         "SOCMEDIAIDCANCEL": "[taglimpse=editSocialMediaIDCloseButton]",
-        "PISTMOREDETAILS": "[taglimpse=PISTViewMoreDetailsButton]"
+        "PISTMOREDETAILS": "[taglimpse=PISTViewMoreDetailsButton]",
+        "SPONSOREDPHOTOS": "[taglimpse=sponsored_photos]",
+        "SPONSOREDVIDEOS": "[taglimpse=sponsored_videos]",
+        "PRIVATESTORIES": "[taglimpse=private_stories]",
+        "ARCHIVEDSTORIES": "[taglimpse=archived_stories]",
+        "BROADCAST": "[taglimpse=broadcast]",
+        "SOCIALMEDIAID": "[taglimpse=social_media_id]"
     },
 
     "SIGNUP": {
@@ -87,6 +93,8 @@
         "AVATAR" : "[taglimpse=ViewStoryAvatar]",
         "STORYUSERNAME" : ".story-userName",
         "EXISTING" : "[taglimpse=existingStory]",
+        "STORYNAME" : "[taglimpse=storyItemStoryName]",
+        "ACTIVESTORYTAB" : "[taglimpse=activeStoriesTab]",
 
         "STORYITEM": "[taglimpse=storyLineItem]",
         "STORYPHOTO": "[taglimpse=storyPhoto]",
@@ -160,6 +168,7 @@
         "CANCELSPON" : "[taglimpse=cancelSponsorshipConfirmButton]",
         "CONFIRMSPON" : "[taglimpse=confirmSponsorshipConfirmButton]",
         "TYPEMSG" : "[taglimpse=pvtMessageInput]",
+        "LEVELSELECT" : "[taglimpse=leveltestSelectButton]",
         "SUBMITPVTMSG" : "[taglimpse=privateMessageSubmit]",
         "EDITSOCMED" : "[taglimpse=socialMediaIDEditButton]",
         "STORY" : "[taglimpse=ViewStorySponsorOrLoginButton]",
@@ -184,6 +193,7 @@
         "CHATWALL" : "[taglimpse=navigationChatWall]",
         "CONNECT" : "[taglimpse=navigationConnect]",
         "FEED" : "[taglimpse=navigationActivityFeed]",
+        "SPONSORME" : "[taglimpse=navigationSponsorMe]",
         "DASHBOARD" : "[taglimpse=navigationProfile]"
     },
 
@@ -257,7 +267,8 @@
         "ALLPHOTOS": "[fxlayoutalign=start]",
         "PUBLICALBUMS" : "[taglimpse=PublicAlbumsTab]",
         "PRIVATEALBUMS" : "[taglimpse=PrivateAlbumsTab]",
-        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]"               
+        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]",
+        "ALBUMNAMETEXT" : ".album-name-link"              
     },
 
     "VIDEO" : {
@@ -314,6 +325,7 @@
     "PROFILEMENU" : {
         "INVITELINK" : "[taglimpse=profileSidebarItemInvite]",
         "CLOSEMENU" : "[taglimpse=profileSidenavCloseButton]",
+        "SPONSORSHIP" : "[taglimpse=profileSidebarItemSponsorship]",
         "AFFILIATE" : "[taglimpse=profileSidebarItemReferral]"  
     },
 
@@ -407,7 +419,26 @@
         "NUMBERCONTACTS" : ".page-count",
         "TOKENSPAGE" : "[taglimpse=tokenWorthText]",
         "PURCHASED" : "[taglimpse=tokenWorthText]",
-        "RECEIVED" : "[taglimpse=tokenWorthText]"
+        "RECEIVED" : "[taglimpse=tokenWorthText]",
+        "RECENTSYORY" : "[taglimpse=recentStoryContainer]",
+        "RECENTSYORYNAME" : "[taglimpse=recentStoryName]",
+        "DELETERECENTSYORY" : "[taglimpse=recentStoryDeleteStoryButton]",
+        "RECENTSYORYIMG" : "[taglimpse=recentStoryImage]",
+        "VIEWALLSTORIES" : "[taglimpse=userDashboardViewAllStories]",
+        "ALBUM" : "[taglimpse=mediaAlbum]",
+        "ALBUMIMG" : "[taglimpse=albumImage]",
+        "ALBUMPUBLIC" : "[taglimpse=albumBadgePublic]",
+        "VIEWALLPHOTOALBUM" : "[taglimpse=viewAllPhotoAlbums]",
+        "VIEWALLVIDEOALBUM" : "[taglimpse=viewAllVideoAlbums]",
+        "VIEWALLCONTACTS" : "[taglimpse=userDashboardViewAllContacts]",
+        "USERNAME" : "[taglimpse=userListUserName]",
+        "PROFILEIMG" : "[taglimpse=userListProfileImagePlaceholder]",
+        "GOTOPROFILE" : "[taglimpse=recentContactsVisitUserButton]",
+        "RECENTSPONSORNAME" : "[taglimpse=recentSponsorsName]",
+        "LEVELNAME" : "[taglimpse=recentSponsorsLevelName]",
+        "LEVELCOST" : "[taglimpse=recentSponsorsLevelCost]",
+        "NOALBUMS" : "[taglimpse=recentAlbumsNoAlbumsText]",
+        "NOSTORIES" : "[taglimpse=recentStoryNoStoriesText]"
         
     }
 
