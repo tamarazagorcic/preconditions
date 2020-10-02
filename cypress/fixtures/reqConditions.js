@@ -552,6 +552,8 @@ class ReqCondition {
             .get(locators.MESSAGES.DATE).last().should('contain.text', 'Today')
     }
 
+    
+
 
 }
 

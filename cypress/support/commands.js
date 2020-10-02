@@ -67,6 +67,22 @@ Cypress.Commands.add('executeAPI', (bool, method, url, parameters, bodyParam) =>
     // })
 })
 
+Cypress.Commands.add('executeAPIMOCK', ( method, url, parameters) => {
+    cy.wait(1500)
+    return cy.window().then(  
+        cy.request({
+                    method : method,
+                    url : env.URL.API + url + parameters,
+                    }).then((resp) => {
+                         let response = resp.body
+                        return response
+                    })
+                
+
+            )   
+    // })
+})
+
 Cypress.Commands.add('login', (usr) => {
 
     cy.visit('/auth/login')
@@ -268,6 +284,19 @@ Cypress.Commands.add('deleteSinglePost', () => {
             let postId = response.data[0].id
             cy.executeAPI(true, "DELETE", "wall/post", "?postId=" + postId, null)
         })
+})
+
+Cypress.Commands.add('getTextMessagesToAll', (usr) => {
+    var email_without_plus = users[usr].email.replace("+", "%2B")
+    var email_for_api = email_without_plus.replace("@", "%40")
+    cy.executeAPIMOCK("GET", "mock/email", "?email="+email_for_api)
+            .then(response => {
+            let g = response.data.data[0].dynamicTemplateData
+            let text = g.split(":")[1]
+            cy.log(text)
+           return text
+        })
+             
 })
 
 Cypress.Commands.add('createTextPost', (postText) =>{

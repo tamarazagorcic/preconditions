@@ -143,7 +143,7 @@ describe('This is a scipt for uploading media to one user', () =>{
                     
     })
 
-    it('Send to all message', () => {
+    it.only('Send to all message', () => {
         
         cy.login(sender1)
              .wait(2000)
@@ -174,9 +174,11 @@ describe('This is a scipt for uploading media to one user', () =>{
         cy
             .get(locators.MESSAGES.SENDTOALL).click()
             .get(locators.MESSAGES.TEXTFILD).type(oktext1)
+            .wait(1000)
             .get(locators.MESSAGES.SENDTOALLSEND).click()
             .get(locators.MESSAGES.CONFIRM).click()
             .get(locators.MESSAGES.ONLY24H).should('be.visible')
+            .wait(2000)
             .get(locators.MESSAGES.CANCEL).click()
             .get(locators.MESSAGES.SENDTOALLCANCEL).click()
             .get(locators.MESSAGES.LASTMESSAGE).eq(0).should('include.text' , oktext)
