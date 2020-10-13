@@ -144,7 +144,7 @@ describe('This is a scipt for testing Dashboard', () =>{
             .get(locators.DASHBOARD.DASHBOARD).click()
             .wait(3000)
             .get('h2').contains('my dashboard', { matchCase: false })
-            .get('h3').contains('My Recent Video Albums', { matchCase: false }).scrollIntoView()
+            .get('h3').contains('My Recent Videos', { matchCase: false }).scrollIntoView()
             .get(locators.DASHBOARDINFO.ALBUM).eq(0).should('be.visible')
             var locator = "albumName-"+name
         cy    .get('[taglimpse='+locator+"]").should('include.text' , name)
@@ -155,7 +155,7 @@ describe('This is a scipt for testing Dashboard', () =>{
             .get(locators.DASHBOARD.DASHBOARD).click()
             .wait(1000)
             .get('h2').contains('my dashboard', { matchCase: false })
-            .get('h3').contains('My Recent Video Albums', { matchCase: false }).scrollIntoView()
+            .get('h3').contains('My Recent Videos', { matchCase: false }).scrollIntoView()
             .get(locators.DASHBOARDINFO.VIEWALLVIDEOALBUM).click()
             .wait(500)
             .get(locators.PHOTO.PUBLICALBUMS).should('be.visible')

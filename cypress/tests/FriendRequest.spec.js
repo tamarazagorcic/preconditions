@@ -10,7 +10,7 @@ const reqConditions = require('../fixtures/reqConditions.js')
 
 describe('This is a scipt for testing friend requests ', () =>{
 
-    var sender = 'TamaraUser49'
+    var sender = 'TamaraUser50'
     var receiver = 'TamaraUser48'
     var receiver1 = 'TamaraUser45'
     var receiver2 = 'TamaraUser41'
@@ -95,6 +95,7 @@ describe('This is a scipt for testing friend requests ', () =>{
 
         cy
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.CONTACTS).click()
             .get(locators.CONTACTS.TABS).contains('Outgoing Requests').click()
             .get(locators.CONTACTS.SERARCHINPUT).type(receiver2)
@@ -113,6 +114,7 @@ describe('This is a scipt for testing friend requests ', () =>{
         cy
             .get(locators.MESSAGES.NOTIFICATIONSHAM).should('include.text' , '1')
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.CONTACTS).should('include.text' , '1').click()
             .get(locators.CONTACTS.TABS).contains('Incoming Requests').click()
             .get(locators.CONTACTS.INCOMINGNOTIFICATION).should('include.text' , '1')
@@ -132,6 +134,7 @@ describe('This is a scipt for testing friend requests ', () =>{
         cy
             .get(locators.MESSAGES.NOTIFICATIONSHAM).should('include.text' , '1')
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.CONTACTS).should('include.text' , '1').click()
             .get(locators.CONTACTS.TABS).contains('Incoming Requests').click()
             .get(locators.CONTACTS.INCOMINGNOTIFICATION).should('include.text' , '1')
@@ -149,6 +152,7 @@ describe('This is a scipt for testing friend requests ', () =>{
         cy
             .get(locators.HEADER.HAMMENU).click()
             .get(locators.HAMBURGERMENU.CONTACTS).click()
+            .wait(1000)
             .get(locators.CONTACTS.TABS).contains('Users').click()
         reqConditions.blockUser(sender)
             cy.get(locators.CONTACTS.TABS).contains('Blocked users').click()
@@ -163,8 +167,9 @@ describe('This is a scipt for testing friend requests ', () =>{
             .wait(2000)
 
         cy
-            .get(locators.MESSAGES.NOTIFICATIONSHAM).should('include.text' , '2')
+            //.get(locators.MESSAGES.NOTIFICATIONSHAM).should('include.text' , '2')
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.CONTACTS).should('include.text' , '2').click()
             .get(locators.CONTACTS.TABS).contains('Incoming Requests').click()
             .get(locators.CONTACTS.INCOMINGNOTIFICATION).should('include.text' , '2')
@@ -180,6 +185,7 @@ describe('This is a scipt for testing friend requests ', () =>{
                     
         cy
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.CONTACTS).click()
             .get(locators.CONTACTS.TABS).contains('Users').click()
         reqConditions.blockUser(sender)
@@ -211,6 +217,7 @@ describe('This is a scipt for testing friend requests ', () =>{
         cy
             .get(locators.MESSAGES.NOTIFICATIONSHAM).should('include.text' , '1')
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.CONTACTS).should('include.text' , '1').click()
             .get(locators.CONTACTS.TABS).contains('Incoming Requests').click()
             .get(locators.CONTACTS.INCOMINGNOTIFICATION).should('include.text' , '1')
@@ -235,6 +242,7 @@ describe('This is a scipt for testing friend requests ', () =>{
         cy
             .get(locators.MESSAGES.NOTIFICATIONSHAM).should('include.text' , '1')
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.CONTACTS).should('include.text' , '1').click()
             .get(locators.CONTACTS.TABS).contains('Incoming Requests').click()
             .get(locators.CONTACTS.INCOMINGNOTIFICATION).should('include.text' , '1')
@@ -276,6 +284,7 @@ describe('This is a scipt for testing friend requests ', () =>{
         cy
             .get(locators.MESSAGES.NOTIFICATIONSHAM).should('include.text' , '2')
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.CONTACTS).should('include.text' , '1').click()
             .get(locators.CONTACTS.TABS).contains('Incoming Requests').click()
             .get(locators.CONTACTS.INCOMINGNOTIFICATION).should('include.text' , '1')
@@ -291,6 +300,7 @@ describe('This is a scipt for testing friend requests ', () =>{
         cy
             .get(locators.MESSAGES.NOTIFICATIONSHAM).should('include.text' , '2')
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.MESSAGES).should('include.text' , '2').click()
             .get(locators.MESSAGES.USERNAMEONLIST).eq(0).should('include.text' , sender)
             .get(locators.MESSAGES.LASTMESSAGE).eq(0).should('include.text' , responsToFR)
@@ -308,6 +318,7 @@ describe('This is a scipt for testing friend requests ', () =>{
                     
         cy
             .get(locators.HEADER.HAMMENU).click()
+            .wait(1000)
             .get(locators.HAMBURGERMENU.CONTACTS).click()
             .get(locators.CONTACTS.TABS).contains('Users').click()
         reqConditions.blockUser(sender)

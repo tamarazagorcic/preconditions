@@ -7,7 +7,8 @@
         "SNACKBAR": "simple-snack-bar",
         "LOGO": "gm-small-logo",
         "CANCELCONTACTREQUEST" : "[taglimpse=closeGlimpseRequest]",
-        "UPLOAD1" : "[taglimpse=uploadContentButtonInput]"
+        "UPLOAD1" : "[taglimpse=uploadContentButtonInput]",
+        "NEWLOGO": "headerMainLogo"
     },
 
     "HEADER": {
@@ -275,7 +276,7 @@
         "PAGE" : "[taglimpse=navigationVideos]",
         "CREATENEWALBUM" : "[taglimpse=openUploadDialogButton]",
         "CLOSEUPLOAD" : "[taglimpse=closeUploadContentDialogButton]",
-        "MEDIAALBUM" : "[taglimpse=mediaAlbum]",
+        "MEDIAALBUM" : "[taglimpse=mediaContentItem]",
         "NAME" : "[taglimpse=albumNameInput]",
         "UPLOAD" : "[taglimpse=uploadContentButton]",
         "DELETEALBUM" : "[taglimpse=deleteAlbum]",
@@ -286,18 +287,18 @@
         "OPTIONS" : "[taglimpse=albumContentOptionsButton]",
         "DELETEVIDEO": "[taglimpse=albumContentOptions-DeleteVideo]",
         "UPLOADVIDEOTHUMBNAIL": "[taglimpse=albumContentOptions-SelectThumbnailImage]",
-        "RENAMEALBUM": "[taglimpse=renameAlbum]",
-        "CANCELRENAME": "[taglimpse=cancelRenameAlbumDialogButton]",
-        "CONFIRMRENAME": "[taglimpse=renameAlbumDialogButton]",
+        "RENAMEVIDEO": "[taglimpse=albumContentOptions-EditVideo]",
+        "CANCELRENAME": "[taglimpse=cancelUpsertVideoDialogButton]",
+        "CONFIRMRENAME": "[taglimpse=upsertVideoDialogButton]",
         "ALBUMNAME": "[class=ng-star-inserted]",
-        "CHANGEALBUMCOVER" : "[taglimpse=changeAlbumCover]",
         "UPLOADTHUMBNAIL" : "[taglimpse=uploadCoverDialogButton]",
         "NOALBUMTEXT" : ".ng-star-inserted",
         "BACKBUTTON" : "[taglimpse=backButton]",
         "ALLPHOTOS": "[fxlayoutalign=start]",
-        "PUBLICALBUMS" : "[taglimpse=PublicAlbumsTab]",
-        "PRIVATEALBUMS" : "[taglimpse=PrivateAlbumsTab]",
-        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]"        
+        "PRIVATEALBUMS" : "[taglimpse=PrivateVideosTab]",
+        "SPONSOREDALBUMS" : "[taglimpse=SponsoredVideosTab]",
+        "PUBLICALBUMS" : "[taglimpse=PublicVideosTab]"
+        
     },
 
     "SEARCH" : {
@@ -418,6 +419,35 @@
         "VALUEONCARD" : ".basic-info-link",
         "NUMBERCONTACTS" : ".page-count",
         "TOKENSPAGE" : "[taglimpse=tokenWorthText]",
+        "PURCHASED" : "[taglimpse=tokenWorthText]",
+        "RECEIVED" : "[taglimpse=tokenWorthText]",
+        "RECENTSYORY" : "[taglimpse=recentStoryContainer]",
+        "RECENTSYORYNAME" : "[taglimpse=recentStoryName]",
+        "DELETERECENTSYORY" : "[taglimpse=recentStoryDeleteStoryButton]",
+        "RECENTSYORYIMG" : "[taglimpse=recentStoryImage]",
+        "VIEWALLSTORIES" : "[taglimpse=userDashboardViewAllStories]",
+        "ALBUM" : "[taglimpse=mediaAlbum]",
+        "ALBUMIMG" : "[taglimpse=albumImage]",
+        "ALBUMPUBLIC" : "[taglimpse=albumBadgePublic]",
+        "VIEWALLPHOTOALBUM" : "[taglimpse=viewAllPhotoAlbums]",
+        "VIEWALLVIDEOALBUM" : "[taglimpse=viewAllVideoAlbums]",
+        "VIEWALLCONTACTS" : "[taglimpse=userDashboardViewAllContacts]",
+        "USERNAME" : "[taglimpse=userListUserName]",
+        "PROFILEIMG" : "[taglimpse=userListProfileImagePlaceholder]",
+        "GOTOPROFILE" : "[taglimpse=recentContactsVisitUserButton]",
+        "RECENTSPONSORNAME" : "[taglimpse=recentSponsorsName]",
+        "LEVELNAME" : "[taglimpse=recentSponsorsLevelName]",
+        "LEVELCOST" : "[taglimpse=recentSponsorsLevelCost]",
+        "NOALBUMS" : "[taglimpse=recentAlbumsNoAlbumsText]",
+        "NOSTORIES" : "[taglimpse=recentStoryNoStoriesText]"
+        
+    },
+
+    "FEED" : {
+        "PAGE" : "[taglimpse=navigationActivityFeed]",
+        "CARD" : ".activity-feed-item",
+        "CARDTEXT" : ".user-feed-data",
+        "TOKENSPAGE" : "[taglimpse=navigationActivityFeed]",
         "PURCHASED" : "[taglimpse=tokenWorthText]",
         "RECEIVED" : "[taglimpse=tokenWorthText]",
         "RECENTSYORY" : "[taglimpse=recentStoryContainer]",
