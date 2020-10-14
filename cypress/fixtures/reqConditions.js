@@ -299,6 +299,15 @@ class ReqCondition {
 
     }
 
+    addPhoto(name, photo){
+        var locator = "goToAlbum-"+name
+        cy.get('[taglimpse='+locator+"]").click()
+            .get(locators.PHOTO.ADD).click()
+        cy.newUploadPhoto(photo)
+            .get(locators.PHOTO.UPLOAD).click()
+            .wait(4000)
+    }
+
     publicVideoAlbum(albumname) {
         cy
             .get(locators.VIDEO.PAGE).click()

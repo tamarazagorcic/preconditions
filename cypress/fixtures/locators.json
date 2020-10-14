@@ -269,7 +269,9 @@
         "PUBLICALBUMS" : "[taglimpse=PublicAlbumsTab]",
         "PRIVATEALBUMS" : "[taglimpse=PrivateAlbumsTab]",
         "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]",
-        "ALBUMNAMETEXT" : ".album-name-link"              
+        "ALBUMNAMETEXT" : ".album-name-link",
+        "FAVORITE" : "[taglimpse=favoriteBadge]"
+                     
     },
 
     "VIDEO" : {
