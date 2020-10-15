@@ -175,6 +175,87 @@ class ReqCondition {
             .wait(1500)
     }
 
+    editStoreVideoName(name, newName){
+        cy
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .get(locators.STORE.OPTIONS).first().click()
+            .get(locators.STORE.EDITVID).first().click()
+            .get(locators.STORE.NAME).clear().type(newName)
+            .get(locators.STORE.PRICE).clear().type('2')
+            .get(locators.STORE.EDITSAVE).click()
+            .wait(6000)
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , newName)
+    }
+
+    editStorePhotoName(name, newName){
+        cy
+            .get(locators.STORE.MYPHOTOTAB).click()
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .get(locators.STORE.CONTENT).first().click()
+            .get(locators.STORE.EDITALBUM).first().click()
+            .get(locators.STORE.NAME).clear().type(newName)
+            .get(locators.STORE.PRICE).clear().type('2')
+            .get(locators.STORE.EDITSAVE).click()
+            .wait(6000)
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , newName)
+    }
+
+    editStoreFileName(name, newName){
+        cy
+            .get(locators.STORE.MYFILESTAB).click()
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .get(locators.STORE.OPTIONS).first().click()
+            .get(locators.STORE.EDITFILE).first().click()
+            .get(locators.STORE.NAME).clear().type(newName)
+            .get(locators.STORE.PRICE).clear().type('2')
+            .get(locators.STORE.EDITSAVE).click()
+            .wait(6000)
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , newName)
+    }
+
+    addPhotoToStorePhotoALbum(name){
+        cy
+            .get(locators.STORE.MYPHOTOTAB).click()
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .get(locators.STORE.CONTENT).first().click()
+            .get(locators.STORE.ADD).click()
+            
+            cy.newUploadPhoto('testphoto5.jpg')
+
+            .get(locators.STORE.UPLOADPIC).click()
+            .wait(6000)
+            
+    }
+
+    deleteStoreVideo(name){
+        cy
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .get(locators.STORE.OPTIONS).first().click()
+            .get(locators.STORE.DELETEVID).first().click()
+            .wait(6000)
+            .get(locators.STORE.CONTENTNAME).first().should('not.include.text' , name)
+    }
+
+    deleteStorePhotoAlbum(name){
+        cy
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .get(locators.STORE.CONTENT).first().click()
+            .get(locators.STORE.DELETEALBUM).click()
+            .get(locators.STORE.CONFIRMBTN).click()
+            .wait(6000)
+            .get(locators.STORE.CONTENTNAME).first().should('not.include.text' , name)
+    }
+
+    deleteStoreFile(name){
+        cy
+            .get(locators.STORE.MYFILESTAB).click()
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .get(locators.STORE.OPTIONS).first().click()
+            .get(locators.STORE.DELETEFILE).first().click()
+            .wait(6000)
+            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+    }
+
     publicPhotoAlbum(albumname) {
         cy
             .get(locators.PHOTO.PAGE).click() 
@@ -306,6 +387,16 @@ class ReqCondition {
         cy.newUploadPhoto(photo)
             .get(locators.PHOTO.UPLOAD).click()
             .wait(6000)
+    }
+
+    renamePhotoAlbum(name,newName){
+        var locator = "goToAlbum-"+name
+        cy.get('[taglimpse='+locator+"]").click()
+            .get(locators.PHOTO.RENAMEALBUM).click()
+            .get(locators.PHOTO.NAME).clear().type(newName)
+            .wait(1000)
+            .get(locators.PHOTO.CONFIRMRENAME).click()
+            .wait(4000)
     }
 
     deletePhotoAlbum(name){

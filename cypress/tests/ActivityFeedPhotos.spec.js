@@ -155,13 +155,64 @@ describe('This is a scipt for checking Activity Feed for photo albums upload, ed
             
     })
 
+    it('Should be able to successfully edit name of public Photo Album', () => {
+        cy.login(creator)
+            .wait(2000)
+            .get(locators.PHOTO.PAGE).click()
+             
+        reqConditions.renamePhotoAlbum(name, "Edit " + name)
+               
+    })
+
+    it('Should see a public photo album renamed but cards do not change place', () => {
+        
+        cy.login(sponsor)
+            .wait(2000)
+
+        var locator = "userName-"+creator
+        cy.get('[taglimpse='+locator+"]").eq(1).should('include.text' , creator)
+            .get(locators.FEED.CARDTEXT).eq(1).should('include.text' , ' Added new content to photo album Edit ' + name +' ')
+            .wait(2000)
+            .get(locators.FEED.CARD).eq(1).click()
+            .get(locators.FRIENDREQUEST.PROFILEUSERNAME).should('contain.text', creator)
+            .get('h2').contains("Edit " + name, { matchCase: false })          
+            
+    })
+
+    it('Should be able to successfully edit name of sponsored Photo Album', () => {
+        cy.login(creator)
+            .wait(2000)
+            .get(locators.PHOTO.PAGE).click()
+            .get(locators.PHOTO.SPONSOREDALBUMS).click()
+             
+        reqConditions.renamePhotoAlbum(name1, "Edit " + name1)
+               
+    })
+
+    it('Should see a sponsored photo album renamed but cards do not change place', () => {
+        
+        cy.login(sponsor)
+            .wait(2000)
+
+        var locator = "userName-"+creator
+        cy.get('[taglimpse='+locator+"]").eq(0).should('include.text' , creator)
+            .get(locators.FEED.CARDTEXT).eq(0).should('include.text' , ' Added new content to photo album Edit ' + name1 +' ')
+            .wait(2000)
+            .get(locators.FEED.CARD).eq(0).click()
+            .get(locators.FRIENDREQUEST.PROFILEUSERNAME).should('contain.text', creator)
+            .get('h2').contains("Edit " + name1, { matchCase: false })          
+            
+    })
+
+    
+
     it('Should be able to successfully delete sponsored photo album', () => {
         cy.login(creator)
             .wait(2000)
             .get(locators.PHOTO.PAGE).click()
             .get(locators.PHOTO.SPONSOREDALBUMS).click()
         
-            reqConditions.deletePhotoAlbum(name1)
+            reqConditions.deletePhotoAlbum('Edit' + name1)
         
                
     })
@@ -170,7 +221,7 @@ describe('This is a scipt for checking Activity Feed for photo albums upload, ed
         
         cy.login(sponsor)
             .wait(2000)
-            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , ' Added new content to photo album ' + name1 +' ')
+            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , ' Added new content to photo album Edit ' + name1 +' ')
                         
     })
 
@@ -179,7 +230,7 @@ describe('This is a scipt for checking Activity Feed for photo albums upload, ed
             .wait(2000)
             .get(locators.PHOTO.PAGE).click()
         
-            reqConditions.deletePhotoAlbum(name)
+            reqConditions.deletePhotoAlbum('Edit' + name)
         
                
     })
@@ -188,7 +239,7 @@ describe('This is a scipt for checking Activity Feed for photo albums upload, ed
         
         cy.login(sponsor)
             .wait(2000)
-            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , ' Added new content to photo album ' + name +' ')
+            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , ' Added new content to photo album Edit ' + name +' ')
                         
     })
 
