@@ -187,7 +187,7 @@ class ReqCondition {
         cy    
             .get(locators.PHOTO.NAME).type(albumname)
             .get(locators.PHOTO.UPLOAD).click()
-            .wait(4000)
+            .wait(6000)
             .get(locators.PHOTO.MEDIAALBUM)
                 .eq(0)
                 .scrollIntoView()
@@ -227,7 +227,7 @@ class ReqCondition {
         cy    
             .get(locators.PHOTO.NAME).type(albumname)
             .get(locators.PHOTO.UPLOAD).click()
-            .wait(4000)
+            .wait(6000)
             .get(locators.PHOTO.PRIVATEALBUMS).click()
             .get(locators.PHOTO.MEDIAALBUM)
                 .eq(0)
@@ -269,7 +269,7 @@ class ReqCondition {
         cy    
             .get(locators.PHOTO.NAME).type(albumname)
             .get(locators.PHOTO.UPLOAD).click()
-            .wait(4000)
+            .wait(6000)
             .get(locators.PHOTO.SPONSOREDALBUMS).click()
             .get(locators.PHOTO.MEDIAALBUM)
                 .eq(0)
@@ -305,6 +305,15 @@ class ReqCondition {
             .get(locators.PHOTO.ADD).click()
         cy.newUploadPhoto(photo)
             .get(locators.PHOTO.UPLOAD).click()
+            .wait(6000)
+    }
+
+    deletePhotoAlbum(name){
+        var locator = "goToAlbum-"+name
+        cy.get('[taglimpse='+locator+"]").click()
+            .get(locators.PHOTO.DELETEALBUM).click()
+            .wait(1000)
+            .get(locators.PHOTO.CONFIRMBTN).click()
             .wait(4000)
     }
 
@@ -419,6 +428,26 @@ class ReqCondition {
                 .scrollIntoView()
                 .should('be.visible')
 
+    }
+
+    editName(name, newName){
+        cy
+            .get(locators.VIDEO.NAMEVIDEOTAB).first().should('include.text' , name)
+            .get(locators.VIDEO.OPTIONS).first().click()
+            .get(locators.VIDEO.RENAMEVIDEO).first().click()
+            .get(locators.VIDEO.NAME).clear().type(newName)
+            .get(locators.VIDEO.CONFIRMRENAME).click()
+            .wait(6000)
+            .get(locators.VIDEO.NAMEVIDEOTAB).first().should('include.text' , newName)
+    }
+
+    deleteVideo(name){
+        cy
+            .get(locators.VIDEO.NAMEVIDEOTAB).first().should('include.text' , name)
+            .get(locators.VIDEO.OPTIONS).first().click()
+            .get(locators.VIDEO.DELETEVIDEO).first().click()
+            .wait(6000)
+            .get(locators.VIDEO.NAMEVIDEOTAB).first().should('not.include.text' , name)
     }
 
     textWallPost(text) {

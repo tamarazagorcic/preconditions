@@ -299,7 +299,9 @@
         "ALLPHOTOS": "[fxlayoutalign=start]",
         "PRIVATEALBUMS" : "[taglimpse=PrivateVideosTab]",
         "SPONSOREDALBUMS" : "[taglimpse=SponsoredVideosTab]",
-        "PUBLICALBUMS" : "[taglimpse=PublicVideosTab]"
+        "PUBLICALBUMS" : "[taglimpse=PublicVideosTab]",
+        "GALERYCLOSE" : "[taglimpse=GalleryClose]",
+        "NAMEVIDEOTAB" : "[taglimpse=MyBroadcastName]"
         
     },
 

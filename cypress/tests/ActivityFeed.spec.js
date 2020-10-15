@@ -8,7 +8,7 @@ const reqConditions = require('../fixtures/reqConditions.js')
 
 
 
-describe('This is a scipt for uploading media to one user', () =>{
+describe('This is a scipt for checking Activity Feed for photo albums upload, edit and delete', () =>{
 
     var creator = 'Tamara'
     var sponsor = 'TamaraTest'
@@ -106,11 +106,11 @@ describe('This is a scipt for uploading media to one user', () =>{
             .get(locators.PHOTO.PAGE).click()
         
             reqConditions.addPhoto(name, 'testphoto4.jpg')
-        
+        cy.wait(2000)
                
     })
 
-    it('Should see a public photo album created', () => {
+    it('Should see a new photo in public album created', () => {
         
         cy.login(sponsor)
             .wait(2000)
@@ -126,6 +126,72 @@ describe('This is a scipt for uploading media to one user', () =>{
             .get(locators.PHOTO.FAVORITE).eq(2).should('be.visible')
             
     })
+
+    it('Should be able to successfully add photo to sponsored photo album', () => {
+        cy.login(creator)
+            .wait(2000)
+            .get(locators.PHOTO.PAGE).click()
+            .get(locators.PHOTO.SPONSOREDALBUMS).click()
+        
+            reqConditions.addPhoto(name1, 'testphoto4.jpg')
+        
+               
+    })
+
+    it('Should see a new photo in sponsored album created', () => {
+        
+        cy.login(sponsor)
+            .wait(2000)
+
+        var locator = "userName-"+creator
+        cy.get('[taglimpse='+locator+"]").first().should('include.text' , creator)
+            .get(locators.FEED.CARDTEXT).first().should('include.text' , ' Added new content to photo album ' + name1 +' ')
+            .wait(2000)
+            .get(locators.FEED.CARD).first().click()
+            .get(locators.FRIENDREQUEST.PROFILEUSERNAME).should('contain.text', creator)
+            .get('h2').contains(name1, { matchCase: false })
+            .wait(1000)
+            .get(locators.PHOTO.FAVORITE).eq(2).should('be.visible')
+            
+    })
+
+    it('Should be able to successfully delete sponsored photo album', () => {
+        cy.login(creator)
+            .wait(2000)
+            .get(locators.PHOTO.PAGE).click()
+            .get(locators.PHOTO.SPONSOREDALBUMS).click()
+        
+            reqConditions.deletePhotoAlbum(name1)
+        
+               
+    })
+
+    it('Should not see a deleted sponsored photo album on Feed', () => {
+        
+        cy.login(sponsor)
+            .wait(2000)
+            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , ' Added new content to photo album ' + name1 +' ')
+                        
+    })
+
+    it('Should be able to successfully delete public photo album', () => {
+        cy.login(creator)
+            .wait(2000)
+            .get(locators.PHOTO.PAGE).click()
+        
+            reqConditions.deletePhotoAlbum(name)
+        
+               
+    })
+
+    it('Should not see a deleted public photo album on Feed', () => {
+        
+        cy.login(sponsor)
+            .wait(2000)
+            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , ' Added new content to photo album ' + name +' ')
+                        
+    })
+
 
     
 
