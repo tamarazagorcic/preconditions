@@ -16,10 +16,9 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
     var name = reqConditions.makeid(7) 
     var name1 = reqConditions.makeid(7)
     var name2 = reqConditions.makeid(7)
-    // beforeEach(() => {
-    //     cy.login('Tamara')
-    //         .wait(2000)
-    // })
+    var videoText = ' Added a new video to the store '
+    var photoText = ' Added new content to the store photo album '
+    var fileText = ' Added a new file to the store '
 
 
     it('Should be able to successfully upload new store video', () => {
@@ -38,7 +37,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
 
         var locator = "userName-"+creator
         cy.get('[taglimpse='+locator+"]").first().should('include.text' , creator)
-            .get(locators.FEED.CARDTEXT).first().should('include.text' , ' Added a new video to the store ')
+            .get(locators.FEED.CARDTEXT).first().should('include.text' ,videoText )
             .wait(2000)
             .get(locators.FEED.CARD).first().click()
             .wait(1500)
@@ -63,7 +62,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
 
         var locator = "userName-"+creator
         cy.get('[taglimpse='+locator+"]").first().should('include.text' , creator)
-            .get(locators.FEED.CARDTEXT).first().should('include.text' , ' Added new content to the store photo album '+name1+' ')
+            .get(locators.FEED.CARDTEXT).first().should('include.text' , photoText+name1+' ')
             .wait(2000)
             .get(locators.FEED.CARD).first().click()
             .wait(1500)
@@ -87,7 +86,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
 
     var locator = "userName-"+creator
     cy.get('[taglimpse='+locator+"]").eq(1).should('include.text' , creator)
-        .get(locators.FEED.CARDTEXT).eq(1).should('include.text' , ' Added a new video to the store ')
+        .get(locators.FEED.CARDTEXT).eq(1).should('include.text' , videoText)
         .wait(2000)
         .get(locators.FEED.CARD).eq(1).click()
         .wait(1500)
@@ -112,7 +111,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
 
         var locator = "userName-"+creator
         cy.get('[taglimpse='+locator+"]").first().should('include.text' , creator)
-            .get(locators.FEED.CARDTEXT).first().should('include.text' , ' Added a new file to the store ')
+            .get(locators.FEED.CARDTEXT).first().should('include.text' , fileText)
             .wait(2000)
             .get(locators.FEED.CARD).first().click()
             .wait(1500)
@@ -121,31 +120,31 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
             
     })
 
-    it('Should be able to successfully edit name of store photo album', () => {
-        cy.login(creator)
-            .wait(2000)
-            .get(locators.STORE.PAGE).click()
+    // it('Should be able to successfully edit name of store photo album', () => {
+    //     cy.login(creator)
+    //         .wait(2000)
+    //         .get(locators.STORE.PAGE).click()
             
              
-        reqConditions.editStorePhotoName(name1, "Edit " + name1)
+    //     reqConditions.editStorePhotoName(name1, "Edit")
                
-    })
+    // })
 
-    it('Edit store photo album should be visible but not to trigger card position change', () => {
+    // it('Edit store photo album should be visible but not to trigger card position change', () => {
         
-        cy.login(sponsor)
-            .wait(2000)
+    //     cy.login(sponsor)
+    //         .wait(2000)
 
-        var locator = "userName-"+creator
-        cy.get('[taglimpse='+locator+"]").eq(1).should('include.text' , creator)
-            .get(locators.FEED.CARDTEXT).eq(1).should('include.text' , ' Added new content to the store photo album Edit '+name1+' ')
-            .wait(2000)
-            .get(locators.FEED.CARD).eq(1).click()
-            .wait(1500)
-            .get(locators.FRIENDREQUEST.PROFILEUSERNAME).should('contain.text', creator)
-            .get('h2').contains('Store Picture Sets', { matchCase: false })
+    //     var locator = "userName-"+creator
+    //     cy.get('[taglimpse='+locator+"]").eq(1).should('include.text' , creator)
+    //         .get(locators.FEED.CARDTEXT).eq(1).should('include.text' , ' Added new content to the store photo album Edit ')
+    //         .wait(2000)
+    //         .get(locators.FEED.CARD).eq(1).click()
+    //         .wait(1500)
+    //         .get(locators.FRIENDREQUEST.PROFILEUSERNAME).should('contain.text', creator)
+    //         .get('h2').contains('Store Picture Sets', { matchCase: false })
             
-    })
+    // })
     
     it('Should be able to successfully add photo to store photo album', () => {
         cy.login(creator)
@@ -153,7 +152,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
             .get(locators.STORE.PAGE).click()
             
              
-        reqConditions.addPhotoToStorePhotoALbum("Edit " + name1)
+        reqConditions.addPhotoToStorePhotoALbum(name1)
                
     })
 
@@ -164,7 +163,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
 
         var locator = "userName-"+creator
         cy.get('[taglimpse='+locator+"]").first().should('include.text' , creator)
-            .get(locators.FEED.CARDTEXT).first().should('include.text' , ' Added new content to the store photo album Edit '+name1+' ')
+            .get(locators.FEED.CARDTEXT).first().should('include.text' , photoText+name1+' ')
             .wait(2000)
             .get(locators.FEED.CARD).first().click()
             .wait(1500)
@@ -190,7 +189,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
 
         var locator = "userName-"+creator
         cy.get('[taglimpse='+locator+"]").eq(1).should('include.text' , creator)
-            .get(locators.FEED.CARDTEXT).eq(1).should('include.text' , ' Added a new file to the store ')
+            .get(locators.FEED.CARDTEXT).eq(1).should('include.text' , fileText)
             .wait(2000)
             .get(locators.FEED.CARD).eq(1).click()
             .wait(1500)
@@ -206,7 +205,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
             .get(locators.STORE.PAGE).click()
             .get(locators.STORE.MYPHOTOTAB).click()
         
-            reqConditions.deleteStorePhotoAlbum('Edit ' + name1)
+            reqConditions.deleteStorePhotoAlbum(name1)
                      
     })
 
@@ -214,7 +213,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
         
         cy.login(sponsor)
             .wait(2000)
-            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , ' Added new content to the store photo album Edit '+name1+' ')
+            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , photoText+name1+' ')
                         
     })
 
@@ -233,7 +232,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
         
         cy.login(sponsor)
             .wait(2000)
-            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , ' Added a new file to the store ')
+            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , fileText)
                         
     })
 
@@ -252,7 +251,7 @@ describe('This is a scipt for checking Activity Feed for videos upload, edit and
         
         cy.login(sponsor)
             .wait(2000)
-            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , ' Added a new video to the store ')
+            .get(locators.FEED.CARDTEXT).first().should('not.include.text' , videoText)
                         
     })
 

@@ -149,7 +149,8 @@
         "CHANGEALBUMCOVER" : "[taglimpse=changeAlbumCover]",
         "CONTENTIMAGE" : "[taglimpse=storeContentImage]",
         "CONTENTFILE" : "[taglimpse=storeContentFileImage]",
-        "NOALBUMTEXT" : ".ng-star-inserted"   
+        "NOALBUMTEXT" : ".ng-star-inserted",
+        "OPTIONFILE" : "[taglimpse=albumContentOptionsButton]"   
     },
 
     "TOKENS" : {
@@ -398,7 +399,8 @@
         "LINK" : "[taglimpse=shareBroadcastButton]",
         "RECORD" : ".record-icon",
         "NOTRECORD" : ".do-not-record-icon",
-        "ANNOUNCE" : "[taglimpse=announceBroadcastButton]"     
+        "ANNOUNCE" : "[taglimpse=announceBroadcastButton]",
+        "BACTOPROFILE" : "[taglimpse=backToProfileButton]"     
     },
 
     "FRIENDREQUEST" : {

@@ -15,7 +15,7 @@ class ReqCondition {
 
     createNewStory(storyName) {
         cy
-            .visit('/user/dashboard')
+            //.visit('/user/dashboard')
             .get(locators.STORY.ADD).click()
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
             
@@ -27,7 +27,7 @@ class ReqCondition {
 
     createPrivateStory(storyName) {
         cy
-            .visit('/user/dashboard')
+            //.visit('/user/dashboard')
             .get(locators.STORY.ADD).click()
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
             
@@ -51,7 +51,7 @@ class ReqCondition {
 
     createPrivateStoryWithLevels(storyName) {
         cy
-            .visit('/user/dashboard')
+            //.visit('/user/dashboard')
             .get(locators.STORY.ADD).click()
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
             
@@ -72,7 +72,7 @@ class ReqCondition {
 
     createNewVideoStory(storyName) {
         cy
-            .visit('/user/dashboard')
+            //.visit('/user/dashboard')
             .get(locators.STORY.ADD).click()
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
             
@@ -86,7 +86,7 @@ class ReqCondition {
 
     photoVideoStory(storyName) {
         cy
-            .visit('/user/dashboard')
+            //.visit('/user/dashboard')
             .get(locators.STORY.ADD).click()
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
 
@@ -100,6 +100,32 @@ class ReqCondition {
             .get(locators.STORY.CLOSEBOTTOMSHEET).click()
     }
 
+    updateArchivedStory() {
+        cy
+            //.visit('/user/dashboard')
+            .get(locators.STORY.PAGE).click()
+            .wait(2000)
+            .get(locators.STORY.EDITSTORYBTN).eq(0).click()
+
+            cy.newUploadPhoto('testphoto6.jpg')
+        
+
+        cy  
+            .get(locators.STORY.POST).click()
+            .wait(7000)
+            .get(locators.STORY.CLOSEBOTTOMSHEET).click()
+    }
+
+    deleteStory() {
+        cy
+            //.visit('/user/dashboard')
+            
+            .get(locators.STORY.DELETESTORYBTN).eq(0).click()
+            .get(locators.STORY.CONFIRMDELETESTORYBTN).click()
+            .wait(4000)
+                        
+    }
+
     newStoreVideo(videoName, videoPrice) {
         cy
             
@@ -109,9 +135,13 @@ class ReqCondition {
         cy.newUploadVideo('testvideo.mp4')
         cy
             .get(locators.STORE.NAME).click().type(videoName)
+            .wait(1000)
             .get(locators.STORE.PRICE).click().type(videoPrice)
+            .wait(1000)
             .get(locators.STORE.UPLOAD).click()
-            .wait(1500)
+            .wait(3000)
+        cy.get(locators.GENERAL.SNACKBAR)
+            .should('contain', 'Video successfully uploaded.')
     }
 
     newStoreVideoWithThumbnail(videoName, videoPrice) {
@@ -127,6 +157,8 @@ class ReqCondition {
             .get(locators.STORE.PRICE).click().type(videoPrice)
             .get(locators.STORE.UPLOAD).click()
             .wait(3000)
+        cy.get(locators.GENERAL.SNACKBAR)
+            .should('contain', 'Video successfully uploaded.')
     }
 
     newStoreFile(fileName, filePrice) {
@@ -142,7 +174,9 @@ class ReqCondition {
             .get(locators.STORE.PRICE).type(filePrice)
             .wait(1500)
             .get(locators.STORE.UPLOAD).click()
-            .wait(4000)
+            .wait(6000)
+        cy.get(locators.GENERAL.SNACKBAR)
+            .should('contain', 'File successfully uploaded.')
     }
 
     newStorePhoto(photoName, photoPrice) {
@@ -151,13 +185,17 @@ class ReqCondition {
             .get(locators.STORE.MYPHOTOTAB).click()
             .get(locators.STORE.ADD).click()
 
-        cy.newUploadPhoto('testphoto5.jpg')
+        cy.newUploadPhoto('testphoto3.jpg')
         cy.newUploadPhoto('testphoto4.jpg')
         cy    
             .get(locators.STORE.NAME).type(photoName)
+            .wait(1000)
             .get(locators.STORE.PRICE).type(photoPrice)
+            .wait(1000)
             .get(locators.STORE.UPLOADPIC).click()
-            .wait(1500)
+            .wait(4000)
+        cy.get(locators.GENERAL.SNACKBAR)
+            .should('contain', 'Photos are successfully uploaded.')
     }
 
     newStorePhotoWithThumbnail(photoName, photoPrice) {
@@ -173,14 +211,17 @@ class ReqCondition {
             .get(locators.STORE.PRICE).type(photoPrice)
             .get(locators.STORE.UPLOADPIC).click()
             .wait(1500)
+        cy.get(locators.GENERAL.SNACKBAR)
+            .should('contain', 'Photos are successfully uploaded.')
     }
 
     editStoreVideoName(name, newName){
         cy
-            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            
             .get(locators.STORE.OPTIONS).first().click()
             .get(locators.STORE.EDITVID).first().click()
             .get(locators.STORE.NAME).clear().type(newName)
+            .wait(1000)
             .get(locators.STORE.PRICE).clear().type('2')
             .get(locators.STORE.EDITSAVE).click()
             .wait(6000)
@@ -190,10 +231,10 @@ class ReqCondition {
     editStorePhotoName(name, newName){
         cy
             .get(locators.STORE.MYPHOTOTAB).click()
-            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
             .get(locators.STORE.CONTENT).first().click()
             .get(locators.STORE.EDITALBUM).first().click()
             .get(locators.STORE.NAME).clear().type(newName)
+            .wait(1000)
             .get(locators.STORE.PRICE).clear().type('2')
             .get(locators.STORE.EDITSAVE).click()
             .wait(6000)
@@ -203,10 +244,10 @@ class ReqCondition {
     editStoreFileName(name, newName){
         cy
             .get(locators.STORE.MYFILESTAB).click()
-            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
             .get(locators.STORE.OPTIONS).first().click()
             .get(locators.STORE.EDITFILE).first().click()
             .get(locators.STORE.NAME).clear().type(newName)
+            .wait(1000)
             .get(locators.STORE.PRICE).clear().type('2')
             .get(locators.STORE.EDITSAVE).click()
             .wait(6000)
@@ -230,6 +271,7 @@ class ReqCondition {
     deleteStoreVideo(name){
         cy
             .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .wait(1000)
             .get(locators.STORE.OPTIONS).first().click()
             .get(locators.STORE.DELETEVID).first().click()
             .wait(6000)
@@ -239,6 +281,7 @@ class ReqCondition {
     deleteStorePhotoAlbum(name){
         cy
             .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .wait(1000)
             .get(locators.STORE.CONTENT).first().click()
             .get(locators.STORE.DELETEALBUM).click()
             .get(locators.STORE.CONFIRMBTN).click()
@@ -250,10 +293,11 @@ class ReqCondition {
         cy
             .get(locators.STORE.MYFILESTAB).click()
             .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
-            .get(locators.STORE.OPTIONS).first().click()
+            .wait(1000)
+            .get(locators.STORE.OPTIONFILE).first().click()
             .get(locators.STORE.DELETEFILE).first().click()
             .wait(6000)
-            .get(locators.STORE.CONTENTNAME).first().should('include.text' , name)
+            .get(locators.STORE.CONTENTNAME).first().should('not.include.text' , name)
     }
 
     publicPhotoAlbum(albumname) {
@@ -610,6 +654,38 @@ class ReqCondition {
 
     }
 
+    editWallPost(newText) {
+        cy
+            .get(locators.DASHBOARD.CHATWALL).click()
+            .get(locators.CHATWALL.EDIT).eq(0).click()
+            .get(locators.CHATWALL.TYPECOMMENT).eq(0).type(newText)
+            .wait(1000)
+            .get(locators.CHATWALL.COMMENT).eq(0).click()
+            .wait(2000)
+            .get(locators.CHATWALL.TEXTCONTENT).eq(0).scrollIntoView().should('contain', newText)
+            
+
+    }
+
+    comentOwnWallPost(text){
+        cy
+            .get(locators.DASHBOARD.CHATWALL).click()
+            .get(locators.CHATWALL.TYPECOMMENT).eq(0).type(text)
+            .wait(1000)
+            .get(locators.CHATWALL.COMMENT).eq(0).click()
+            .wait(2000)
+            .get(locators.CHATWALL.COMMENTCONTENT).eq(0).scrollIntoView().should('contain', text)
+        
+    }
+
+    deleteWallPost() {
+        cy
+            .get(locators.DASHBOARD.CHATWALL).click()
+            .get(locators.CHATWALL.DELETEPOST).eq(0).click()
+            .wait(2000)          
+
+    }
+
     sendFriendRequest(to , text, tokens) {
         cy
             .get(locators.HEADER.HAMMENU).click()
@@ -679,6 +755,19 @@ class ReqCondition {
             .get(locators.MESSAGES.TEXTCHECK).should('contain.text', text)
             .get(locators.MESSAGES.TIMECHECK).last().should('be.visible')
             .get(locators.MESSAGES.DATE).last().should('contain.text', 'Today')
+    }
+
+    startBroadcast() {
+        cy
+        
+        .get(locators.BROADCAST.PAGE).click()
+        .get(locators.BROADCAST.START).click()
+        .wait(1000)
+        .get(locators.BROADCAST.RECORD).click()
+        .wait(5000)
+        .get(locators.BROADCAST.ANNOUNCE).click()
+        .wait(1500)
+        .get(locators.BROADCAST.END).click()
     }
 
     
