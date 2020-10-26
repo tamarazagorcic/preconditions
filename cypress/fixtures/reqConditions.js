@@ -590,7 +590,7 @@ class ReqCondition {
             .get(locators.DASHBOARD.CHATWALL).click()
             .get(locators.CHATWALL.MSG).type(text)
             .wait(1000)
-            .get(locators.CHATWALL.POST).click()
+            .get(locators.CHATWALL.POST).first().click()
             .wait(1000)
             //.get(locators.CHATWALL.TEXTCONTENT).eq(0).should('contain', name)
 
@@ -599,11 +599,11 @@ class ReqCondition {
     photoWallPost(photo) {
         cy
             .get(locators.DASHBOARD.CHATWALL).click()
-            .get(locators.CHATWALL.PHOTO).click()
+            .get(locators.CHATWALL.PHOTO).eq(0).click()
 
         cy.uploadPhoto(photo)
         cy 
-            .get(locators.CHATWALL.UPLOAD).click()
+            .get(locators.CHATWALL.UPLOAD).first().click()
             .wait(1000)
            // .get(locators.CHATWALL.IMAGECONTENT).eq(0).scrollIntoView().should('be.visible')
 
@@ -612,11 +612,11 @@ class ReqCondition {
     videoWallPost(video) {
         cy
             .get(locators.DASHBOARD.CHATWALL).click()
-            .get(locators.CHATWALL.PHOTO).click()
+            .get(locators.CHATWALL.PHOTO).eq(0).click()
 
         cy.uploadVideo(video)
         cy 
-            .get(locators.CHATWALL.UPLOAD).click()
+            .get(locators.CHATWALL.UPLOAD).eq(0).click()
             .wait(4000)
             // .get(locators.CHATWALL.VIDEOCONTENT).eq(0).scrollIntoView().should('be.visible')
 
@@ -625,13 +625,13 @@ class ReqCondition {
     photoTextWallPost(text, photo) {
         cy
             .get(locators.DASHBOARD.CHATWALL).click()
-            .get(locators.CHATWALL.PHOTO).click()
+            .get(locators.CHATWALL.PHOTO).eq(0).click()
 
         cy.uploadPhoto(photo)
         cy 
             .get(locators.CHATWALL.UPLOADTEXT).type(text)
             .wait(500)
-            .get(locators.CHATWALL.UPLOAD).click()
+            .get(locators.CHATWALL.UPLOAD).eq(0).click()
             .wait(1000)
             //.get(locators.CHATWALL.TEXTCONTENT).eq(0).scrollIntoView().should('contain', name1)
             .get(locators.CHATWALL.IMAGECONTENT).eq(0).scrollIntoView().should('be.visible')
@@ -641,13 +641,13 @@ class ReqCondition {
     videoTextWallPost(text, video) {
         cy
             .get(locators.DASHBOARD.CHATWALL).click()
-            .get(locators.CHATWALL.PHOTO).click()
+            .get(locators.CHATWALL.PHOTO).eq(0).click()
 
         cy.uploadVideo(video)
         cy 
             .get(locators.CHATWALL.UPLOADTEXT).type(text)
             .wait(500)
-            .get(locators.CHATWALL.UPLOAD).click()
+            .get(locators.CHATWALL.UPLOAD).eq(0).click()
             .wait(4000)
             // .get(locators.CHATWALL.TEXTCONTENT).eq(0).scrollIntoView().should('contain', name2)
             .get(locators.CHATWALL.VIDEOCONTENT).eq(0).scrollIntoView().should('be.visible')

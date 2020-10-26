@@ -150,7 +150,8 @@ describe('This is a scipt for testing Dashboard', () =>{
         cy    .get('[taglimpse='+locator+"]").should('include.text' , name)
             .get(locators.DASHBOARDINFO.ALBUMIMG).eq(0).click()
             .wait(1000)
-            .get('h2').contains(name, { matchCase: false })
+            .get(locators.VIDEO.GALERYCLOSE).eq(0).click()
+            .wait(1000)
         cy
             .get(locators.DASHBOARD.DASHBOARD).click()
             .wait(1000)
@@ -162,10 +163,10 @@ describe('This is a scipt for testing Dashboard', () =>{
             .wait(3000)
             .get(locators.PHOTO.ALBUMNAMETEXT).first().should('include.text' , name)
         cy
-            .get(locators.VIDEO.MEDIAALBUM).first().click()
+            .get(locators.VIDEO.OPTIONS).first().click()
             .wait(1000)
-            .get(locators.VIDEO.DELETEALBUM).click()
-            .get(locators.VIDEO.CONFIRMBTN).click()
+            .get(locators.VIDEO.DELETEVIDEO).click()
+           
         cy  
             .wait(2000)
             .get(locators.DASHBOARD.DASHBOARD).click()

@@ -11,7 +11,7 @@ const reqConditions = require('../fixtures/reqConditions.js')
 describe('This is a scipt for uploading media to one user', () =>{
 
     beforeEach(() => {
-        cy.login('Tamara23')
+        cy.login('TamaraUser21')
             .wait(2000)
     })
 
