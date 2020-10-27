@@ -26,7 +26,14 @@ describe('This is a scipt for uploading media to one user', () =>{
 
    
     it('tetstststst', () => {
-        cy.getTextMessagesToAll(sender1)
+
+        cy.log("hdkfhskfhsdkfhskfhskhsdhfdsffffffffffffffffffffffffffffff")
+        
+        let body = cy.getBody("tamaraz+4@glimpse.me")
+
+        cy.log("hdkfhskfhsdkfhskfhskhsdhfdsffffffffffffffffffffffffffffff")
+
+        //cy.getTextMessagesToAll(sender1)
         // let username = cy.getTextMessagesToAll(sender1)
 
         // cy.log(username)

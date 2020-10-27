@@ -67,12 +67,12 @@ Cypress.Commands.add('executeAPI', (bool, method, url, parameters, bodyParam) =>
     // })
 })
 
-Cypress.Commands.add('executeAPIMOCK', ( method, url, parameters) => {
+Cypress.Commands.add('executeAPIMOCK', (  parameters) => {
     cy.wait(1500)
     return cy.window().then(  
         cy.request({
-                    method : method,
-                    url : env.URL.API + url + parameters,
+                   // method : GET,
+                    url : "https://g-qa-api.glimpse.me/mock/email?email=" + parameters,
                     }).then((resp) => {
                          let response = resp.body
                         return response
@@ -81,6 +81,16 @@ Cypress.Commands.add('executeAPIMOCK', ( method, url, parameters) => {
 
             )   
     // })
+})
+
+Cypress.Commands.add('getBody', ( email)=> {
+    let removePlus = email.replace("+", "%2B")
+    let emailForApi = removePlus.replace("@", "%40")
+    cy.executeAPIMOCK( emailForApi)
+        .then(response =>{
+            let templateData = response.data[0]
+            return templateData
+        })
 })
 
 Cypress.Commands.add('login', (usr) => {
