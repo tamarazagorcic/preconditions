@@ -10,7 +10,7 @@ const reqConditions = require('../fixtures/reqConditions.js')
 
 describe('This is a scipt for checking Activity Feed for Wall posts upload, edit and delete', () =>{
 
-    var creator = 'Tamara'
+    var creator = 'TamaraUser22'
     var sponsor = 'TamaraTest'
     var text = reqConditions.makeid(77) 
     var text1 = reqConditions.makeid(37)

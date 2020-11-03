@@ -10,7 +10,7 @@ const reqConditions = require('../fixtures/reqConditions.js')
 
 describe('This is a scipt for checking Activity Feed for videos upload, edit and delete', () =>{
 
-    var creator = 'Tamara'
+    var creator = 'TamaraUser22'
     var sponsor = 'TamaraTest'
     var nonsponsor = 'TamaraUser104'
     var name = reqConditions.makeid(7) 

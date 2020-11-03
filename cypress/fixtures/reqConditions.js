@@ -766,7 +766,7 @@ class ReqCondition {
         .get(locators.BROADCAST.RECORD).click()
         .wait(5000)
         .get(locators.BROADCAST.ANNOUNCE).click()
-        .wait(1500)
+        .wait(5000)
         .get(locators.BROADCAST.END).click()
     }
 

@@ -159,9 +159,9 @@ describe('This is a scipt for testing Dashboard', () =>{
             .get('h3').contains('My Recent Videos', { matchCase: false }).scrollIntoView()
             .get(locators.DASHBOARDINFO.VIEWALLVIDEOALBUM).click()
             .wait(500)
-            .get(locators.PHOTO.PUBLICALBUMS).should('be.visible')
+            .get(locators.VIDEO.PUBLICALBUMS).should('be.visible')
             .wait(3000)
-            .get(locators.PHOTO.ALBUMNAMETEXT).first().should('include.text' , name)
+            .get(locators.VIDEO.NAMEVIDEOTAB).first().should('include.text' , name)
         cy
             .get(locators.VIDEO.OPTIONS).first().click()
             .wait(1000)
