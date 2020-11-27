@@ -68,7 +68,7 @@
     "STORY": {
         "PAGE": "[taglimpse=navigationStories]",
         "TAB": "[taglimpse=storiesTabWrapper]",
-        "ADD": "[taglimpse=storyLineAddNewStory]",
+        "ADD": ".mat-button",
         "NEWSTORYNAME": "[taglimpse=storyNameInput]",
         "ADDFILES" : "[taglimpse=uploadContentButtonInput]",
         "CANCEL" : "[taglimpse=storyCancelButton]",
@@ -219,7 +219,9 @@
         "EDITREPLYOWNER" : "[taglimpse=chatWallOwnerEditReplyButton]",
         "OWNERDELETE" : "[taglimpse=chatWallOwnerDeleteReplyButton]",
         "EDITREPLY" : "[taglimpse=chatWallReplayerEditReplyButton]",
-        "DELETEREPLY" : "[taglimpse=chatWallReplayerDeleteReplyButton]"    
+        "DELETEREPLY" : "[taglimpse=chatWallReplayerDeleteReplyButton]",
+        "OPTIONS" : "[taglimpse=moreOptionsPostButton]"
+            
     },
 
     "PROFILEDETAILS" : {
@@ -400,7 +402,8 @@
         "RECORD" : ".record-icon",
         "NOTRECORD" : ".do-not-record-icon",
         "ANNOUNCE" : "[taglimpse=announceBroadcastButton]",
-        "BACTOPROFILE" : "[taglimpse=backToProfileButton]"     
+        "BACTOPROFILE" : "[taglimpse=backToProfileButton]",
+        "BROADCASTENDED" : "[taglimpse=broadcastEndedContainer]"     
     },
 
     "FRIENDREQUEST" : {
@@ -476,6 +479,12 @@
         "NOALBUMS" : "[taglimpse=recentAlbumsNoAlbumsText]",
         "NOSTORIES" : "[taglimpse=recentStoryNoStoriesText]"
         
+    },
+
+    "RA" : {
+        "ITEM" : ".recent-activity-item",
+        "BROADCAST" : "[data-icon = eye]",
+        "MINIICON" : ".icon"
     }
 
 

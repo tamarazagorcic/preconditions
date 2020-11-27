@@ -15,8 +15,7 @@ class ReqCondition {
 
     createNewStory(storyName) {
         cy
-            //.visit('/user/dashboard')
-            .get(locators.STORY.ADD).click()
+            .get(locators.STORY.ADD).eq(0).click({ force: true })
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
             
         cy.newUploadPhoto('testphoto3.jpg')
@@ -27,8 +26,7 @@ class ReqCondition {
 
     createPrivateStory(storyName) {
         cy
-            //.visit('/user/dashboard')
-            .get(locators.STORY.ADD).click()
+            .get(locators.STORY.ADD).eq(0).click({ force: true })
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
             
         cy.newUploadPhoto('testphoto4.jpg')
@@ -51,8 +49,7 @@ class ReqCondition {
 
     createPrivateStoryWithLevels(storyName) {
         cy
-            //.visit('/user/dashboard')
-            .get(locators.STORY.ADD).click()
+            .get(locators.STORY.ADD).eq(0).click({ force: true })
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
             
         cy.newUploadPhoto('testphoto4.jpg')
@@ -72,8 +69,7 @@ class ReqCondition {
 
     createNewVideoStory(storyName) {
         cy
-            //.visit('/user/dashboard')
-            .get(locators.STORY.ADD).click()
+            .get(locators.STORY.ADD).eq(0).click({ force: true })
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
             
         cy.newUploadVideo('testvideo.mp4')
@@ -86,8 +82,8 @@ class ReqCondition {
 
     photoVideoStory(storyName) {
         cy
-            //.visit('/user/dashboard')
-            .get(locators.STORY.ADD).click()
+            
+            .get(locators.STORY.ADD).eq(0).click({ force: true })
             .get(locators.STORY.NEWSTORYNAME).click().type(storyName)
 
             cy.newUploadVideo('testvideo.mp4')
@@ -657,6 +653,7 @@ class ReqCondition {
     editWallPost(newText) {
         cy
             .get(locators.DASHBOARD.CHATWALL).click()
+            .get(locators.CHATWALL.OPTIONS).eq(0).click()
             .get(locators.CHATWALL.EDIT).eq(0).click()
             .get(locators.CHATWALL.TYPECOMMENT).eq(0).type(newText)
             .wait(1000)
@@ -681,6 +678,7 @@ class ReqCondition {
     deleteWallPost() {
         cy
             .get(locators.DASHBOARD.CHATWALL).click()
+            .get(locators.CHATWALL.OPTIONS).eq(0).click()
             .get(locators.CHATWALL.DELETEPOST).eq(0).click()
             .wait(2000)          
 

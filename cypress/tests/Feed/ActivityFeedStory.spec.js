@@ -2,7 +2,7 @@ import 'cypress-file-upload'
 const users = require('../fixtures/users.json')
 const env = require('../fixtures/env.json')
 const locators = require('../fixtures/locators.json')
-const reqConditions = require('../fixtures/reqConditions.js')
+const reqConditions = require('../../fixtures/reqConditions.js')
 //import bp from '../fixtures/apiBodyParameters.js'
 
 
@@ -20,7 +20,7 @@ describe('This is a scipt for checking Activity Feed for photo albums upload, ed
 
     it('Should be able to successfully create new story', () => {
         cy.login(creator)
-            .wait(2000)
+            .wait(4000)
              
         reqConditions.createNewStory(name)
                
@@ -48,7 +48,7 @@ describe('This is a scipt for checking Activity Feed for photo albums upload, ed
 
     it('Should be able to successfully create new story with sponsored part', () => {
         cy.login(creator)
-            .wait(2000)
+            .wait(6000)
              
         reqConditions.createPrivateStoryWithLevels(name1)
                

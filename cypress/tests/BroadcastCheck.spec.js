@@ -20,7 +20,7 @@ describe('This is a scipt for broadcast check', () =>{
     it('Should be able to successfully create new private, public and sponsored Video album', () => {
     
         cy
-            .visit('/user/dashboard')
+            .visit('/user/feed')
             .get(locators.BROADCAST.PAGE).click()
             .get(locators.BROADCAST.START).click()
             .wait(1000)

@@ -2,7 +2,7 @@ import 'cypress-file-upload'
 const users = require('../fixtures/users.json')
 const env = require('../fixtures/env.json')
 const locators = require('../fixtures/locators.json')
-const reqConditions = require('../fixtures/reqConditions.js')
+const reqConditions = require('../../fixtures/reqConditions.js')
 //import bp from '../fixtures/apiBodyParameters.js'
 
 
@@ -39,6 +39,7 @@ describe('This is a scipt for checking Activity Feed for Wall posts upload, edit
             .get(locators.FEED.CARDTEXT).first().should('include.text' , WallText)
             .wait(2000)
             .get(locators.FEED.CARD).first().click()
+            .wait(2000)
             .get(locators.FRIENDREQUEST.PROFILEUSERNAME).should('contain.text', creator)
             .get('h2').contains('wall', { matchCase: false })
             

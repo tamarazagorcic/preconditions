@@ -1,9 +1,7 @@
 import 'cypress-file-upload'
-const users = require('../fixtures/users.json')
-const env = require('../fixtures/env.json')
-const locators = require('../fixtures/locators.json')
-const reqConditions = require('../fixtures/reqConditions.js')
-//import bp from '../fixtures/apiBodyParameters.js'
+const locators = require('../../fixtures/locators.json')
+const reqConditions = require('../../fixtures/reqConditions.js')
+
 
 
 
@@ -28,7 +26,7 @@ describe('This is a scipt for testing Dashboard', () =>{
             .get(locators.DASHBOARDINFO.TEXTONCARD).eq(0).should('include.text' , 'My Contacts').scrollIntoView()
                      
         cy.get(locators.DASHBOARDINFO.VALUEONCARD).eq(0).invoke('text').then( newEle => {
-            newElem = " " + newEle + " total "
+            newElem = " " + newEle //+ " total "
             cy.log(newElem)
             cy.get(locators.DASHBOARDINFO.TEXTONCARD).eq(0).click()
             cy.get(locators.DASHBOARDINFO.NUMBERCONTACTS).scrollIntoView()

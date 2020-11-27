@@ -2,7 +2,7 @@ import 'cypress-file-upload'
 const users = require('../fixtures/users.json')
 const env = require('../fixtures/env.json')
 const locators = require('../fixtures/locators.json')
-const reqConditions = require('../fixtures/reqConditions.js')
+const reqConditions = require('../../fixtures/reqConditions.js')
 //import bp from '../fixtures/apiBodyParameters.js'
 
 
