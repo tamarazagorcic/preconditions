@@ -26,7 +26,7 @@ describe('This is a scipt for testing Dashboard', () =>{
             .get(locators.DASHBOARDINFO.TEXTONCARD).eq(0).should('include.text' , 'My Contacts').scrollIntoView()
                      
         cy.get(locators.DASHBOARDINFO.VALUEONCARD).eq(0).invoke('text').then( newEle => {
-            newElem = " " + newEle //+ " total "
+            newElem = " " + newEle + "  "
             cy.log(newElem)
             cy.get(locators.DASHBOARDINFO.TEXTONCARD).eq(0).click()
             cy.get(locators.DASHBOARDINFO.NUMBERCONTACTS).scrollIntoView()
@@ -84,7 +84,8 @@ describe('This is a scipt for testing Dashboard', () =>{
             .get(locators.DASHBOARD.DASHBOARD).click()
             .wait(1000)
             .get('h3').contains('My Recent Stories', { matchCase: false }).scrollIntoView()
-            .get(locators.DASHBOARDINFO.DELETERECENTSYORY).first().should('be.visible').click()
+            .get(locators.STORY.OPTIONS).eq(0).click({force:true})
+            .get(locators.DASHBOARDINFO.DELETERECENTSYORY).click({force:true})
             .get(locators.STORY.CONFIRMDELETESTORYBTN).click()
             .wait(3000)
             .get(locators.DASHBOARDINFO.NOSTORIES).should('include.text' , 'No recent stories available')
@@ -115,7 +116,7 @@ describe('This is a scipt for testing Dashboard', () =>{
             .get('h3').contains('My Recent Photo Albums', { matchCase: false }).scrollIntoView()
             .get(locators.DASHBOARDINFO.VIEWALLPHOTOALBUM).click()
             .wait(500)
-            .get(locators.PHOTO.PUBLICALBUMS).should('be.visible')
+            .get(locators.PHOTO.PUBLICALBUMS).click()
             .wait(3000)
             .get(locators.PHOTO.ALBUMNAMETEXT).first().should('include.text' , name)
         cy
@@ -146,7 +147,7 @@ describe('This is a scipt for testing Dashboard', () =>{
             .get(locators.DASHBOARDINFO.ALBUM).eq(0).should('be.visible')
             var locator = "albumName-"+name
         cy    .get('[taglimpse='+locator+"]").should('include.text' , name)
-            .get(locators.DASHBOARDINFO.ALBUMIMG).eq(0).click()
+            .get(locators.DASHBOARDINFO.ALBUMIMG).eq(0).click({force:true})
             .wait(1000)
             .get(locators.VIDEO.GALERYCLOSE).eq(0).click()
             .wait(1000)
@@ -157,11 +158,11 @@ describe('This is a scipt for testing Dashboard', () =>{
             .get('h3').contains('My Recent Videos', { matchCase: false }).scrollIntoView()
             .get(locators.DASHBOARDINFO.VIEWALLVIDEOALBUM).click()
             .wait(500)
-            .get(locators.VIDEO.PUBLICALBUMS).should('be.visible')
+            .get(locators.VIDEO.PUBLICALBUMS).click()
             .wait(3000)
             .get(locators.VIDEO.NAMEVIDEOTAB).first().should('include.text' , name)
         cy
-            .get(locators.VIDEO.OPTIONS).first().click()
+            .get(locators.VIDEO.OPTIONS).first().click({force:true})
             .wait(1000)
             .get(locators.VIDEO.DELETEVIDEO).click()
            

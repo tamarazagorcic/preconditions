@@ -68,14 +68,17 @@
     "STORY": {
         "PAGE": "[taglimpse=navigationStories]",
         "TAB": "[taglimpse=storiesTabWrapper]",
+        "TABACTIVE": "[taglimpse=activeStoriesTab]",
+        "TABARCHIVED": "[taglimpse=archivedStoriesTab]",
+        "OPTIONS" : "[taglimpse=storyContentBottomSheetButton]",
         "ADD": ".mat-button",
         "NEWSTORYNAME": "[taglimpse=storyNameInput]",
         "ADDFILES" : "[taglimpse=uploadContentButtonInput]",
         "CANCEL" : "[taglimpse=storyCancelButton]",
         "POST": "[taglimpse=storyPostUpdateButton]",
         "BOTTOMNOTIFICATION": "[taglimpse=storyBottomSheetHeader]",
-        "DELETESTORYBTN": "[taglimpse=storyItemDeleteStory]",
-        "EDITSTORYBTN": "[taglimpse=storyItemEditStory]",
+        "DELETESTORYBTN": "[taglimpse=optionDeleteStory]",
+        "EDITSTORYBTN": "[taglimpse=optionEditstory]",
         "STORYCONTENT": ".story-wizard-list",
         "PUBLICCOUNT": ".public-count",
         "SPONSOREDCOUNT": ".sponsored-count",
@@ -196,7 +199,8 @@
         "CONNECT" : "[taglimpse=navigationConnect]",
         "FEED" : "[taglimpse=navigationActivityFeed]",
         "SPONSORME" : "[taglimpse=navigationSponsorMe]",
-        "DASHBOARD" : "[taglimpse=navigationProfile]"
+        "DASHBOARD" : "[taglimpse=navigationProfile]",
+        "PROFILE": "[taglimpse=navigationProfile]"
     },
 
     "CHATWALL" : {
@@ -269,9 +273,9 @@
         "NOALBUMTEXT" : ".ng-star-inserted",
         "BACKBUTTON" : "[taglimpse=backButton]",
         "ALLPHOTOS": "[fxlayoutalign=start]",
-        "PUBLICALBUMS" : "[taglimpse=PublicAlbumsTab]",
-        "PRIVATEALBUMS" : "[taglimpse=PrivateAlbumsTab]",
-        "SPONSOREDALBUMS" : "[taglimpse=SponsoredAlbumsTab]",
+        "PUBLICALBUMS" : "[taglimpse=PublicTab]",
+        "PRIVATEALBUMS" : "[taglimpse=PrivateTab]",
+        "SPONSOREDALBUMS" : "[taglimpse=SponsoredTab]",
         "ALBUMNAMETEXT" : ".album-name-link",
         "FAVORITE" : "[taglimpse=favoriteBadge]"
                      
@@ -289,10 +293,10 @@
         "CANCELBTN": "[taglimpse=dialogCancelButton]",
         "MEDIAPHOTO" : "[taglimpse=albumContentThumbnail]",
         "ADD" : "[taglimpse=openUploadDialogButton]",
-        "OPTIONS" : "[taglimpse=albumContentOptionsButton]",
-        "DELETEVIDEO": "[taglimpse=albumContentOptions-DeleteVideo]",
-        "UPLOADVIDEOTHUMBNAIL": "[taglimpse=albumContentOptions-SelectThumbnailImage]",
-        "RENAMEVIDEO": "[taglimpse=albumContentOptions-EditVideo]",
+        "OPTIONS" : "[taglimpse=albumContentBottomSheetButton]",
+        "DELETEVIDEO": "[taglimpse=optionDeleteVideo]",
+        "UPLOADVIDEOTHUMBNAIL": "[taglimpse=optionSelectThumbnailImage]",
+        "RENAMEVIDEO": "[taglimpse=optionEditVideo]",
         "CANCELRENAME": "[taglimpse=cancelUpsertVideoDialogButton]",
         "CONFIRMRENAME": "[taglimpse=upsertVideoDialogButton]",
         "ALBUMNAME": "[class=ng-star-inserted]",
@@ -300,9 +304,9 @@
         "NOALBUMTEXT" : ".ng-star-inserted",
         "BACKBUTTON" : "[taglimpse=backButton]",
         "ALLPHOTOS": "[fxlayoutalign=start]",
-        "PRIVATEALBUMS" : "[taglimpse=PrivateVideosTab]",
-        "SPONSOREDALBUMS" : "[taglimpse=SponsoredVideosTab]",
-        "PUBLICALBUMS" : "[taglimpse=PublicVideosTab]",
+        "PRIVATEALBUMS" : "[taglimpse=PrivateTab]",
+        "SPONSOREDALBUMS" : "[taglimpse=SponsoredTab]",
+        "PUBLICALBUMS" : "[taglimpse=PublicTab]",
         "GALERYCLOSE" : "[taglimpse=GalleryClose]",
         "NAMEVIDEOTAB" : "[taglimpse=MyBroadcastName]"
         
@@ -424,7 +428,7 @@
     },
 
     "DASHBOARDINFO" : {
-        "TEXTONCARD" : ".theme-blue-lighter-color",
+        "TEXTONCARD" : ".basic-info-title",
         "VALUEONCARD" : ".basic-info-link",
         "NUMBERCONTACTS" : ".page-count",
         "TOKENSPAGE" : "[taglimpse=tokenWorthText]",
@@ -432,7 +436,7 @@
         "RECEIVED" : "[taglimpse=tokenWorthText]",
         "RECENTSYORY" : "[taglimpse=recentStoryContainer]",
         "RECENTSYORYNAME" : "[taglimpse=recentStoryName]",
-        "DELETERECENTSYORY" : "[taglimpse=recentStoryDeleteStoryButton]",
+        "DELETERECENTSYORY" : "[taglimpse=optionDeleteStory]",
         "RECENTSYORYIMG" : "[taglimpse=recentStoryImage]",
         "VIEWALLSTORIES" : "[taglimpse=userDashboardViewAllStories]",
         "ALBUM" : "[taglimpse=mediaAlbum]",
@@ -483,7 +487,8 @@
 
     "RA" : {
         "ITEM" : ".recent-activity-item",
-        "BROADCAST" : "[data-icon = eye]",
+        "BROADCAST" : "[taglimpse=activityType-broadcast]",
+        "WALL" : "[taglimpse=activityType-writeNewWallPost]",
         "MINIICON" : ".icon"
     }
 

@@ -1,5 +1,6 @@
 {
-    "baseUrl" : "https://g-qa.glimpse.me/",
+    "baseUrl" : "https://www.glmp.srl/",
+    
     "integrationFolder": "cypress/tests",
     "fixturesFolder": "cypress/fixtures",
     "viewportWidth" : 1200,
